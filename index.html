@@ -26,7 +26,7 @@
 <!-- Fonts: preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- Favicon (inline SVG) -->
 <!-- Favicons -->
@@ -161,18 +161,21 @@
   }
   .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 19px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
     color: var(--white);
     text-decoration: none;
     display: flex;
     align-items: center;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
     white-space: nowrap;
+    line-height: 1;
   }
-  @media (min-width: 480px) { .logo { font-size: 21px; } }
+  @media (min-width: 480px) { .logo { font-size: 26px; } }
+  @media (min-width: 768px) { .logo { font-size: 28px; } }
   .logo-text .accent { color: var(--gold); }
+  .logo-text .dot { color: var(--gold); margin-left: 1px; }
   .nav { display: none; gap: 28px; align-items: center; }
   .nav a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.15s; }
   .nav a:hover { opacity: 1; text-decoration: none; }
@@ -327,9 +330,15 @@
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.15s;
+    transition: opacity 0.2s, transform 0.2s, border-color 0.15s, color 0.15s, background 0.15s;
     flex-shrink: 0;
     white-space: nowrap;
+  }
+  .btn-reset.is-hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    visibility: hidden;
   }
   .btn-reset:hover {
     border-color: var(--red);
@@ -703,7 +712,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label="NoTaxOvertimeCalc.com home">
-      <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span>
+      <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/who-qualifies">Who Qualifies</a>
@@ -750,7 +759,7 @@
           <h2 id="form-title">Your details</h2>
           <p class="subtitle">Enter your pay info to estimate your federal tax savings.</p>
         </div>
-        <button type="button" class="btn-reset" id="btn-reset" aria-label="Clear all fields">
+        <button type="button" class="btn-reset is-hidden" id="btn-reset" aria-label="Clear all fields">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
           Clear all
         </button>
@@ -950,7 +959,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span></div>
+        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span></div>
         <p>Free tax tools for American hourly workers. Built to help you understand the No Tax on Overtime provision of the One Big Beautiful Bill Act.</p>
       </div>
       <div class="footer-col">
@@ -1150,6 +1159,14 @@
     $('period-label').textContent = period === 'annual' ? 'year'
       : period === 'monthly' ? 'month'
       : period === 'biweekly' ? 'pay period' : 'week';
+
+    // Toggle Clear button visibility based on whether any field has data
+    var hasAnyData = ($('rate').value || $('ot-hours').value || $('other-wages').value || $('magi').value);
+    var resetBtn = $('btn-reset');
+    if (resetBtn) {
+      if (hasAnyData) resetBtn.classList.remove('is-hidden');
+      else resetBtn.classList.add('is-hidden');
+    }
   }
 
   // ============================================
