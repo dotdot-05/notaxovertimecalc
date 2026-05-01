@@ -185,6 +185,17 @@
   .nav a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.15s; text-decoration: none; }
   .nav a:hover { opacity: 1; }
   .nav a.active { opacity: 1; color: var(--gold); }
+  .nav a.nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 8px 16px;
+    border-radius: 8px;
+    opacity: 1;
+    font-weight: 600;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .nav a.nav-cta:hover { background: #ffb733; color: var(--navy); }
+  .nav a.nav-cta:active { transform: translateY(1px); }
   .nav-toggle { display: inline-flex; flex-direction: column; gap: 4px; background: transparent; border: 0; padding: 8px; cursor: pointer; }
   .nav-toggle span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
   @media (min-width: 768px) { .nav { display: flex; } .nav-toggle { display: none; } }
@@ -500,11 +511,11 @@
       <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="/">Calculator</a>
       <a href="/who-qualifies" class="active">Who Qualifies</a>
       <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
       <a href="/state-tax-guide">State Guide</a>
       <a href="/faq">FAQ</a>
+      <a href="/" class="nav-cta">Calculator</a>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="navToggle">
       <span></span><span></span><span></span>
