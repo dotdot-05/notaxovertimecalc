@@ -1284,15 +1284,6 @@
 
     // Reset
     $('btn-reset').addEventListener('click', function() {
-      // Check if there's anything to reset
-      var rate = $('rate').value;
-      var ot = $('ot-hours').value;
-      var wages = $('other-wages').value;
-      var magi = $('magi').value;
-      var hasData = rate || ot || wages || magi;
-
-      if (hasData && !confirm('Clear all inputs and start over?')) return;
-
       // Clear numeric inputs
       $('rate').value = '';
       $('ot-hours').value = '';
