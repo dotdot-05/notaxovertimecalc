@@ -26,7 +26,7 @@
 <!-- Fonts: preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
 <!-- Favicon (inline SVG) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230a1628%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22800%22 font-size=%2256%22 fill=%22%23f0a500%22>$</text></svg>">
@@ -157,28 +157,17 @@
   }
   .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
     color: var(--white);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
     white-space: nowrap;
   }
-  @media (min-width: 480px) { .logo { font-size: 20px; } }
-  .logo-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; height: 32px;
-    background: var(--gold);
-    color: var(--navy);
-    border-radius: 8px;
-    font-weight: 800;
-  }
+  @media (min-width: 480px) { .logo { font-size: 21px; } }
   .logo-text .accent { color: var(--gold); }
   .nav { display: none; gap: 28px; align-items: center; }
   .nav a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.15s; }
@@ -662,7 +651,6 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="logo" aria-label="NoTaxOvertimeCalc.com home">
-      <span class="logo-mark">$</span>
       <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span>
     </a>
     <nav class="nav" aria-label="Primary">
@@ -901,7 +889,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><span class="logo-mark">$</span><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span></div>
+        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span></span></div>
         <p>Free tax tools for American hourly workers. Built to help you understand the No Tax on Overtime provision of the One Big Beautiful Bill Act.</p>
       </div>
       <div class="footer-col">
