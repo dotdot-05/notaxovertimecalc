@@ -26,7 +26,9 @@
 <!-- Fonts: preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
 <!-- Favicon (inline SVG) -->
 <!-- Favicons -->
@@ -480,6 +482,109 @@
   .alert-info { background: #e6f7f3; border: 1px solid #99e0ce; color: #00644f; }
   .alert-icon { flex-shrink: 0; font-weight: 700; }
 
+  /* US-only badge variant */
+  .eyebrow-us {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.18);
+    margin-left: 8px;
+  }
+  @media (max-width: 540px) {
+    .eyebrow-us { display: block; margin-left: 0; margin-top: 8px; }
+  }
+
+  /* Tooltip on label */
+  .tip { display: inline-flex; position: relative; vertical-align: middle; margin-left: 4px; cursor: help; }
+  .tip-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; background: var(--gray-200); color: var(--gray-600);
+    border-radius: 50%; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+    font-style: italic; transition: background 0.15s, color 0.15s;
+  }
+  .tip:hover .tip-icon, .tip:focus .tip-icon { background: var(--navy); color: var(--gold); }
+  .tip-bubble {
+    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: var(--navy); color: var(--white); padding: 10px 14px; border-radius: 8px;
+    font-size: 12px; font-weight: 400; line-height: 1.5; width: 280px; max-width: 90vw;
+    box-shadow: var(--shadow-md); z-index: 10; opacity: 0; pointer-events: none;
+    transition: opacity 0.15s; letter-spacing: 0;
+  }
+  .tip-bubble::after {
+    content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 6px solid transparent; border-top-color: var(--navy);
+  }
+  .tip:hover .tip-bubble, .tip:focus .tip-bubble, .tip:focus-within .tip-bubble { opacity: 1; pointer-events: auto; }
+
+  /* Mode toggle button */
+  .mode-toggle {
+    display: inline-flex; align-items: center; background: transparent; border: 0;
+    color: var(--teal-dark); font-size: 13px; font-weight: 600; font-family: inherit;
+    padding: 8px 0; cursor: pointer; margin-top: 4px; text-decoration: underline;
+    text-decoration-thickness: 1px; text-underline-offset: 3px;
+  }
+  .mode-toggle:hover { color: var(--navy); }
+
+  .hint-soft { background: var(--gray-100); padding: 8px 12px; border-radius: 8px; margin-top: 10px; }
+
+  /* Day-by-day grid */
+  .grid-label { display: block; font-weight: 500; font-size: 14px; margin-bottom: 10px; color: var(--gray-800); }
+  .day-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;
+    background: var(--gray-100); padding: 10px; border-radius: 10px;
+  }
+  .day-cell { display: flex; flex-direction: column; align-items: center; }
+  .day-name {
+    font-size: 11px; font-weight: 600; color: var(--gray-600);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px;
+  }
+  .day-input {
+    width: 100%; min-height: 44px; padding: 0 4px; border: 1.5px solid var(--gray-200);
+    border-radius: 6px; text-align: center; font-size: 15px; font-weight: 600;
+    color: var(--navy); background: var(--white);
+    -moz-appearance: textfield; appearance: textfield;
+  }
+  .day-input::-webkit-outer-spin-button, .day-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .day-input:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 2px rgba(0,201,167,0.15); }
+  @media (max-width: 420px) {
+    .day-grid { gap: 4px; padding: 8px; }
+    .day-input { font-size: 14px; min-height: 40px; }
+    .day-name { font-size: 10px; }
+  }
+
+  /* Grid-derived result chip */
+  .grid-result {
+    margin-top: 14px; padding: 12px 14px; background: var(--white);
+    border: 1.5px solid var(--gray-200); border-radius: 10px;
+  }
+  .grid-result-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 0; font-size: 13px; color: var(--gray-600);
+  }
+  .grid-result-row.highlight { font-size: 15px; padding: 8px 10px; margin: 4px -10px -4px;
+    background: var(--teal-soft, #e6f7f3); border-radius: 6px; color: #00644f; font-weight: 600; }
+  .grid-result-value { font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .grid-result-row.highlight .grid-result-value { color: var(--teal-dark); }
+  :root { --teal-soft: #e6f7f3; }
+
+  /* Who-this-is-for 3-card row */
+  .audience-band {
+    background: var(--gray-100);
+    padding: 36px 0;
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .audience-grid {
+    display: grid; gap: 14px; grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) { .audience-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  .audience-card {
+    background: var(--white); border: 1px solid var(--gray-200);
+    border-radius: var(--radius); padding: 20px 22px;
+  }
+  .audience-card .acard-icon { font-size: 24px; margin-bottom: 10px; line-height: 1; }
+  .audience-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .audience-card p { font-size: 14px; color: var(--gray-600); margin: 0; line-height: 1.6; }
+
   /* RESULTS PANEL */
   .calc-results h3 {
     color: var(--white);
@@ -731,14 +836,6 @@
   }
   .skip-link:focus { top: 0; }
 </style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHQZH68FJ0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VHQZH68FJ0');
-</script>
 </head>
 <body>
 
@@ -775,8 +872,9 @@
 <section class="hero">
   <div class="container hero-inner">
     <span class="eyebrow">Tax Years 2025–2028 · OBBBA</span>
+    <span class="eyebrow eyebrow-us">🇺🇸 For U.S. workers only · Federal income tax</span>
     <h1>How much will you save with the <span class="highlight">No Tax on Overtime</span> deduction?</h1>
-    <p class="lede">A free, accurate calculator built on the One Big Beautiful Bill Act (P.L. 119-21, IRC §225) for hourly W-2 workers.</p>
+    <p class="lede">A free, accurate calculator built on the One Big Beautiful Bill Act (P.L. 119-21, IRC §225). This tool applies to U.S. federal income taxes only and is designed for American hourly workers covered by the Fair Labor Standards Act (FLSA).</p>
     <div class="hero-meta">
       <span><span class="dot">●</span> Updated for 2025 brackets</span>
       <span><span class="dot">●</span> No signup required</span>
@@ -825,21 +923,73 @@
         <div class="hint">Your base hourly rate before overtime multiplier.</div>
       </div>
 
-      <!-- Overtime hours -->
-      <div class="field-row">
-        <div class="field">
-          <label for="ot-hours">Overtime hours per <span id="period-label">week</span></label>
-          <input type="number" id="ot-hours" min="0" step="0.5" placeholder="10" inputmode="decimal" autocomplete="off">
-          <div class="hint">FLSA overtime: hours over 40 per week.</div>
+      <!-- Overtime hours — dual-mode (Simple / Day-by-day) -->
+      <div class="ot-mode" id="otMode">
+
+        <!-- MODE A: Simple annual hours -->
+        <div class="ot-pane" data-mode="simple">
+          <div class="field-row">
+            <div class="field">
+              <label for="ot-hours">
+                Overtime hours per <span id="period-label">week</span>
+                <span class="tip" tabindex="0" role="button" aria-label="What counts as FLSA overtime">
+                  <span class="tip-icon">i</span>
+                  <span class="tip-bubble">FLSA overtime = hours worked beyond 40 in a single workweek. If you work in California, Alaska, or Nevada, your daily overtime hours (e.g. hours 9–10 on a long day) only count if they also push your weekly total above 40.</span>
+                </span>
+              </label>
+              <input type="number" id="ot-hours" min="0" step="0.5" placeholder="10" inputmode="decimal" autocomplete="off">
+              <div class="hint">FLSA overtime only — hours worked over 40 per week. Don't include daily-only state overtime.</div>
+            </div>
+            <div class="field">
+              <label for="period">Period</label>
+              <select id="period">
+                <option value="weekly">Weekly</option>
+                <option value="biweekly">Bi-weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="annual" selected>Annual</option>
+              </select>
+            </div>
+          </div>
+          <div class="hint hint-soft">Paid double-time (2×)? Still enter your overtime hours normally — only the 0.5× FLSA premium is deductible regardless of your pay rate.</div>
+          <button type="button" class="mode-toggle" id="modeToCA">
+            Work in California, Alaska, or Nevada? Use day-by-day calculator →
+          </button>
         </div>
-        <div class="field">
-          <label for="period">Period</label>
-          <select id="period">
-            <option value="weekly">Weekly</option>
-            <option value="biweekly">Bi-weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="annual" selected>Annual</option>
-          </select>
+
+        <!-- MODE B: Day-by-day grid -->
+        <div class="ot-pane" data-mode="grid" hidden>
+          <label class="grid-label">Hours worked per day (typical week)</label>
+          <div class="day-grid" role="group" aria-label="Daily hours">
+            <div class="day-cell"><span class="day-name">Mon</span><input type="number" id="dh-0" class="day-input" min="0" max="24" step="0.5" value="8" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Tue</span><input type="number" id="dh-1" class="day-input" min="0" max="24" step="0.5" value="8" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Wed</span><input type="number" id="dh-2" class="day-input" min="0" max="24" step="0.5" value="8" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Thu</span><input type="number" id="dh-3" class="day-input" min="0" max="24" step="0.5" value="8" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Fri</span><input type="number" id="dh-4" class="day-input" min="0" max="24" step="0.5" value="8" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Sat</span><input type="number" id="dh-5" class="day-input" min="0" max="24" step="0.5" value="0" inputmode="decimal"></div>
+            <div class="day-cell"><span class="day-name">Sun</span><input type="number" id="dh-6" class="day-input" min="0" max="24" step="0.5" value="0" inputmode="decimal"></div>
+          </div>
+
+          <div class="field" style="margin-top:14px;">
+            <label for="weeks-worked">Weeks worked per year</label>
+            <input type="number" id="weeks-worked" min="1" max="52" step="1" value="50" inputmode="numeric">
+          </div>
+
+          <div class="grid-result" id="gridResult">
+            <div class="grid-result-row">
+              <span class="grid-result-label">Total hours per week</span>
+              <span class="grid-result-value" id="gridTotal">40</span>
+            </div>
+            <div class="grid-result-row highlight">
+              <span class="grid-result-label">FLSA-qualifying overtime per year</span>
+              <span class="grid-result-value" id="gridFlsa">0 hrs</span>
+            </div>
+          </div>
+
+          <div class="hint hint-soft">We automatically count only hours over 40 per week as FLSA-qualifying. California daily overtime (hours 9–12 in a day) only qualifies for this federal deduction if your weekly total also exceeds 40 hours.</div>
+
+          <button type="button" class="mode-toggle" id="modeToSimple">
+            ↑ Switch to simple annual hours entry
+          </button>
         </div>
       </div>
 
@@ -911,7 +1061,7 @@
       </div>
 
       <div class="results-disclaimer">
-        Estimate only. FICA (7.65%) and state income taxes still apply to overtime pay. The OBBBA deduction reduces federal income tax only, capped annually and phased out at higher incomes. Consult a tax professional before filing.
+        Estimate only. Applies to U.S. federal income tax under OBBBA (IRC §225). Workers in California, Alaska, and Nevada: only overtime hours exceeding 40 per week (FLSA-required) qualify — state-only daily overtime hours do not count for this federal deduction unless they push the weekly total above 40. Results don't reflect FICA (still 7.65%), state income taxes, or AMT. Consult a tax professional before filing.
       </div>
     </aside>
   </main>
@@ -921,6 +1071,29 @@
     <p>Generated by NoTaxOvertimeCalc.com · No Tax on Overtime Calculator (OBBBA, IRC §225)</p>
   </div>
 </div>
+
+<!-- AUDIENCE BAND (Who this is for) -->
+<section class="audience-band">
+  <div class="container">
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="acard-icon">🇺🇸</div>
+        <h3>U.S. Workers Only</h3>
+        <p>This deduction applies to American workers under federal law only. It is not available in other countries.</p>
+      </div>
+      <div class="audience-card">
+        <div class="acard-icon">⏰</div>
+        <h3>Hourly / Non-Exempt Employees</h3>
+        <p>You must be a W-2 employee covered by the FLSA — not self-employed or a contractor.</p>
+      </div>
+      <div class="audience-card">
+        <div class="acard-icon">📅</div>
+        <h3>Tax Years 2025–2028</h3>
+        <p>This temporary deduction applies to overtime earned January 1, 2025 through December 31, 2028.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="section">
@@ -1098,20 +1271,46 @@
     }
   }
 
+  // Read OT hours from whichever mode is active
+  function getAnnualOTHoursAndState() {
+    var mode = window._otMode || 'simple';
+    if (mode === 'grid') {
+      var weeklyTotal = 0;
+      for (var i = 0; i < 7; i++) {
+        var v = parseFloat($('dh-' + i).value) || 0;
+        if (v < 0) v = 0;
+        weeklyTotal += v;
+      }
+      var weeks = parseFloat($('weeks-worked').value) || 0;
+      if (weeks < 0) weeks = 0; if (weeks > 52) weeks = 52;
+      var weeklyFLSA = Math.max(0, weeklyTotal - 40);
+      var annualFLSA = weeklyFLSA * weeks;
+      var totalAnnualHours = weeklyTotal * weeks;
+      // Update grid result chip
+      var gt = $('gridTotal'); if (gt) gt.textContent = (Math.round(weeklyTotal * 10) / 10) + ' hrs';
+      var gf = $('gridFlsa');  if (gf) gf.textContent = (Math.round(annualFLSA * 10) / 10) + ' hrs/yr';
+      return { annualHours: annualFLSA, mode: 'grid', totalEnteredAnnual: totalAnnualHours };
+    }
+    // simple mode
+    var otHoursRaw = parseFloat($('ot-hours').value) || 0;
+    var period = $('period').value;
+    return { annualHours: periodToAnnual(otHoursRaw, period), mode: 'simple', totalEnteredAnnual: periodToAnnual(otHoursRaw, period) };
+  }
+
   // ============================================
   //  CORE CALCULATION
   // ============================================
   function calculate() {
     var filing      = (document.querySelector('input[name="filing"]:checked') || {}).value || 'single';
     var rate        = parseFloat($('rate').value) || 0;
-    var otHoursRaw  = parseFloat($('ot-hours').value) || 0;
     var period      = $('period').value;
     var otherWages  = parseFloat($('other-wages').value) || 0;
     var magiInput   = parseFloat($('magi').value);
 
-    var annualOTHours = periodToAnnual(otHoursRaw, period);
-    var totalOTPay   = rate * 1.5 * annualOTHours;          // gross OT pay (1.5×)
-    var otPremium    = rate * 0.5 * annualOTHours;          // 0.5× premium = eligible
+    var otState = getAnnualOTHoursAndState();
+    var annualOTHours = otState.annualHours;
+    var totalOTPay   = rate * 1.5 * annualOTHours;
+    var otPremium    = rate * 0.5 * annualOTHours;
 
     var totalWages = otherWages + totalOTPay;
     var magi = isFinite(magiInput) && magiInput > 0 ? magiInput : totalWages;
@@ -1183,6 +1382,10 @@
     if (filing !== 'mfs' && magi >= po.end) {
       alerts.push({type:'warning', msg:'Your MAGI ('+fmt(magi)+') exceeds '+fmt(po.end)+'. The deduction is fully phased out.'});
     }
+    // Day-grid mode: warn when state-only OT hours are being filtered out
+    if (otState.mode === 'grid' && otState.totalEnteredAnnual > 0 && annualOTHours < otState.totalEnteredAnnual * 0.8) {
+      alerts.push({type:'info', msg:'Note: some of your hours are state-law-only daily overtime and don\'t qualify for the federal deduction. We\'ve automatically counted only hours over 40/week.'});
+    }
 
     var alertsHtml = '';
     for (var i = 0; i < alerts.length; i++) {
@@ -1197,7 +1400,16 @@
       : period === 'biweekly' ? 'pay period' : 'week';
 
     // Toggle Clear button visibility based on whether any field has data
-    var hasAnyData = ($('rate').value || $('ot-hours').value || $('other-wages').value || $('magi').value);
+    var gridChanged = false;
+    if (window._otMode === 'grid') {
+      var defaults = [8,8,8,8,8,0,0];
+      for (var di = 0; di < 7; di++) {
+        var dv = parseFloat($('dh-' + di).value);
+        if (!isNaN(dv) && dv !== defaults[di]) { gridChanged = true; break; }
+      }
+      if (parseFloat($('weeks-worked').value) !== 50) gridChanged = true;
+    }
+    var hasAnyData = ($('rate').value || $('ot-hours').value || $('other-wages').value || $('magi').value || gridChanged);
     var resetBtn = $('btn-reset');
     if (resetBtn) {
       if (hasAnyData) resetBtn.classList.remove('is-hidden');
@@ -1210,12 +1422,15 @@
   // ============================================
   function readURLState() {
     var params = new URLSearchParams(window.location.search);
-    var f  = params.get('f');  // filing
-    var r  = params.get('r');  // rate
-    var oh = params.get('oh'); // ot hours
-    var p  = params.get('p');  // period
-    var w  = params.get('w');  // wages
-    var m  = params.get('m');  // magi
+    var f  = params.get('f');
+    var r  = params.get('r');
+    var oh = params.get('oh');
+    var p  = params.get('p');
+    var w  = params.get('w');
+    var m  = params.get('m');
+    var mode = params.get('mode');
+    var d  = params.get('d');   // day hours: comma-separated 7 values
+    var wk = params.get('wk');  // weeks worked
 
     if (f === 'single' || f === 'mfj' || f === 'mfs') {
       var radio = $('fs-' + f);
@@ -1226,6 +1441,19 @@
     if (p && ['weekly','biweekly','monthly','annual'].indexOf(p) >= 0) $('period').value = p;
     if (w) $('other-wages').value = w;
     if (m) $('magi').value = m;
+
+    if (d) {
+      var parts = d.split(',');
+      for (var i = 0; i < 7 && i < parts.length; i++) {
+        var v = parseFloat(parts[i]);
+        if (!isNaN(v) && v >= 0) $('dh-' + i).value = v;
+      }
+    }
+    if (wk) {
+      var wkv = parseFloat(wk);
+      if (!isNaN(wkv) && wkv > 0) $('weeks-worked').value = wkv;
+    }
+    if (mode === 'grid') setMode('grid', true);
   }
 
   function buildShareURL() {
@@ -1233,10 +1461,19 @@
     var filing = (document.querySelector('input[name="filing"]:checked') || {}).value || 'single';
     params.set('f', filing);
     if ($('rate').value) params.set('r', $('rate').value);
-    if ($('ot-hours').value) params.set('oh', $('ot-hours').value);
-    params.set('p', $('period').value);
     if ($('other-wages').value) params.set('w', $('other-wages').value);
     if ($('magi').value) params.set('m', $('magi').value);
+
+    if (window._otMode === 'grid') {
+      params.set('mode', 'grid');
+      var dh = [];
+      for (var i = 0; i < 7; i++) dh.push(parseFloat($('dh-' + i).value) || 0);
+      params.set('d', dh.join(','));
+      if ($('weeks-worked').value) params.set('wk', $('weeks-worked').value);
+    } else {
+      if ($('ot-hours').value) params.set('oh', $('ot-hours').value);
+      params.set('p', $('period').value);
+    }
     return window.location.origin + window.location.pathname + '?' + params.toString();
   }
 
@@ -1251,12 +1488,26 @@
   }
 
   // ============================================
+  //  MODE TOGGLE (Simple ↔ Day-by-day)
+  // ============================================
+  window._otMode = 'simple';
+  function setMode(mode, skipRecalc) {
+    window._otMode = mode;
+    var panes = document.querySelectorAll('.ot-pane');
+    for (var i = 0; i < panes.length; i++) {
+      var paneMode = panes[i].getAttribute('data-mode');
+      panes[i].hidden = (paneMode !== mode);
+    }
+    if (!skipRecalc) calculate();
+  }
+
+  // ============================================
   //  EVENT WIRING
   // ============================================
   function init() {
     readURLState();
 
-    // All input listeners
+    // All input listeners (simple mode + shared fields)
     var inputs = document.querySelectorAll(
       '#rate, #ot-hours, #other-wages, #magi, #period, input[name="filing"]'
     );
@@ -1264,6 +1515,20 @@
       inputs[i].addEventListener('input', calculate);
       inputs[i].addEventListener('change', calculate);
     }
+
+    // Day-grid listeners (Mode B)
+    for (var d = 0; d < 7; d++) {
+      var dEl = $('dh-' + d);
+      if (dEl) { dEl.addEventListener('input', calculate); dEl.addEventListener('change', calculate); }
+    }
+    var wEl = $('weeks-worked');
+    if (wEl) { wEl.addEventListener('input', calculate); wEl.addEventListener('change', calculate); }
+
+    // Mode toggles
+    var toCA = $('modeToCA');
+    var toSimple = $('modeToSimple');
+    if (toCA) toCA.addEventListener('click', function() { setMode('grid'); });
+    if (toSimple) toSimple.addEventListener('click', function() { setMode('simple'); });
 
     // Mobile nav
     var navToggle = $('navToggle');
@@ -1329,6 +1594,14 @@
       // Reset to defaults
       $('fs-single').checked = true;
       $('period').value = 'annual';
+
+      // Reset day-grid
+      var defaults = [8,8,8,8,8,0,0];
+      for (var dr = 0; dr < 7; dr++) {
+        if ($('dh-' + dr)) $('dh-' + dr).value = defaults[dr];
+      }
+      if ($('weeks-worked')) $('weeks-worked').value = 50;
+      setMode('simple', true);
 
       // Strip URL query so refresh doesn't restore
       try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
