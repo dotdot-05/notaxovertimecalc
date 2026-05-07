@@ -488,7 +488,11 @@
     color: rgba(255, 255, 255, 0.95);
     border-color: rgba(255, 255, 255, 0.18);
     margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
+  .eyebrow-us .flag-icon { display: inline-block; border-radius: 2px; flex-shrink: 0; }
   @media (max-width: 540px) {
     .eyebrow-us { display: block; margin-left: 0; margin-top: 8px; }
   }
@@ -836,6 +840,14 @@
   }
   .skip-link:focus { top: 0; }
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHQZH68FJ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VHQZH68FJ0');
+</script>
 </head>
 <body>
 
@@ -872,7 +884,18 @@
 <section class="hero">
   <div class="container hero-inner">
     <span class="eyebrow">Tax Years 2025–2028 · OBBBA</span>
-    <span class="eyebrow eyebrow-us">🇺🇸 For U.S. workers only · Federal income tax</span>
+    <span class="eyebrow eyebrow-us">
+      <svg class="flag-icon" width="18" height="12" viewBox="0 0 18 12" aria-hidden="true">
+        <rect width="18" height="12" fill="#b22234"/>
+        <rect y="1.85" width="18" height="0.92" fill="#fff"/>
+        <rect y="3.69" width="18" height="0.92" fill="#fff"/>
+        <rect y="5.54" width="18" height="0.92" fill="#fff"/>
+        <rect y="7.38" width="18" height="0.92" fill="#fff"/>
+        <rect y="9.23" width="18" height="0.92" fill="#fff"/>
+        <rect width="7.2" height="6.46" fill="#3c3b6e"/>
+      </svg>
+      For U.S. workers only · Federal income tax
+    </span>
     <h1>How much will you save with the <span class="highlight">No Tax on Overtime</span> deduction?</h1>
     <p class="lede">A free, accurate calculator built on the One Big Beautiful Bill Act (P.L. 119-21, IRC §225). This tool applies to U.S. federal income taxes only and is designed for American hourly workers covered by the Fair Labor Standards Act (FLSA).</p>
     <div class="hero-meta">
@@ -1077,7 +1100,17 @@
   <div class="container">
     <div class="audience-grid">
       <div class="audience-card">
-        <div class="acard-icon">🇺🇸</div>
+        <div class="acard-icon">
+          <svg width="36" height="24" viewBox="0 0 18 12" aria-hidden="true" style="display:block;">
+            <rect width="18" height="12" fill="#b22234"/>
+            <rect y="1.85" width="18" height="0.92" fill="#fff"/>
+            <rect y="3.69" width="18" height="0.92" fill="#fff"/>
+            <rect y="5.54" width="18" height="0.92" fill="#fff"/>
+            <rect y="7.38" width="18" height="0.92" fill="#fff"/>
+            <rect y="9.23" width="18" height="0.92" fill="#fff"/>
+            <rect width="7.2" height="6.46" fill="#3c3b6e"/>
+          </svg>
+        </div>
         <h3>U.S. Workers Only</h3>
         <p>This deduction applies to American workers under federal law only. It is not available in other countries.</p>
       </div>
