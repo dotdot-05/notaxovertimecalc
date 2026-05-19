@@ -1,0 +1,45 @@
+# Cloudflare Pages _redirects file
+# Format: [source] [destination] [status]
+
+# Force apex domain (or www — pick one and stick with it)
+# Uncomment ONE of the following pairs based on your preference:
+
+# Option A: Force www → apex (recommended for branding)
+https://www.notaxovertimecalc.com/* https://notaxovertimecalc.com/:splat 301!
+
+# Option B: Force apex → www (uncomment if you prefer www)
+# https://notaxovertimecalc.com/* https://www.notaxovertimecalc.com/:splat 301!
+
+# Strip .html extension for clean URLs
+/index.html / 301
+/tips-calculator.html /tips-calculator 301
+/paycheck-calculator.html /paycheck-calculator 301
+/who-qualifies.html /who-qualifies 301
+/how-to-find-overtime-on-w2.html /how-to-find-overtime-on-w2 301
+/state-tax-guide.html /state-tax-guide 301
+/faq.html /faq 301
+/california-overtime-deduction.html /california-overtime-deduction 301
+/obbba-overtime-calculator-texas.html /obbba-overtime-calculator-texas 301
+/nurses-overtime-tax-2025.html /nurses-overtime-tax-2025 301
+/construction-workers-overtime-deduction.html /construction-workers-overtime-deduction 301
+/about.html /about 301
+/contact.html /contact 301
+/privacy-policy.html /privacy-policy 301
+
+# Common typos/variants → correct page (capture lost traffic)
+/calculator / 301
+/overtime-calculator / 301
+/no-tax-on-overtime / 301
+/notaxovertime / 301
+/qualify /who-qualifies 301
+/eligibility /who-qualifies 301
+/w2 /how-to-find-overtime-on-w2 301
+/states /state-tax-guide 301
+/privacy /privacy-policy 301
+
+# Missing favicon PNG aliases → existing files
+/favicon-32.png /favicon-192.png 301
+/apple-touch-icon.png /favicon-512.png 301
+
+# 404 fallback
+/* /404.html 404

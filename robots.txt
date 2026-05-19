@@ -1,0 +1,83 @@
+# robots.txt for notaxovertimecalc.com
+# Last updated: 2026-05-19
+
+# =====================================================
+# DEFAULT: Allow all reputable crawlers full access
+# =====================================================
+User-agent: *
+Allow: /
+Disallow: /thank-you
+Disallow: /*.json$
+Disallow: /admin/
+Disallow: /draft/
+
+# =====================================================
+# GOOGLE — required for AdSense approval + SEO
+# =====================================================
+User-agent: Googlebot
+Allow: /
+
+# Required for AdSense ad serving — do NOT block
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google's AI training crawler (blocks AI Overviews citations if disallowed)
+# Currently blocked — uncomment "Allow: /" to appear in AI Overviews
+User-agent: Google-Extended
+Disallow: /
+
+# =====================================================
+# BING
+# =====================================================
+User-agent: Bingbot
+Allow: /
+
+# =====================================================
+# AI CRAWLERS — citation traffic policy
+# =====================================================
+
+# Perplexity AI — cites sources in answers, drives referral traffic
+User-agent: PerplexityBot
+Allow: /
+
+# ChatGPT — surfaces in ChatGPT answers and citations
+User-agent: GPTBot
+Allow: /
+
+# Claude / Anthropic — surfaces in Claude AI answers and citations
+# Allowing these means notaxovertimecalc.com can be cited when
+# users ask Claude about overtime taxes
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# =====================================================
+# SEO TOOLS — rate-limited, not blocked
+# =====================================================
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# =====================================================
+# SCRAPER / AI TRAINING BOTS — no revenue value
+# =====================================================
+User-agent: CCBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# =====================================================
+# SITEMAP
+# =====================================================
+Sitemap: https://notaxovertimecalc.com/sitemap.xml

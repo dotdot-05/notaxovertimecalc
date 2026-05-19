@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paycheck Calculator with OBBBA Overtime Deduction 2025 | Federal Take-Home Pay</title>
+<meta name="description" content="Free 2025 paycheck calculator showing your full per-paycheck breakdown — federal income tax, FICA, take-home pay — plus your projected annual savings from the OBBBA overtime deduction.">
+<meta name="keywords" content="paycheck calculator 2025, take-home pay calculator, OBBBA overtime paycheck, federal withholding calculator, FICA calculator">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="NoTaxOvertimeCalc">
+<link rel="canonical" href="https://notaxovertimecalc.com/paycheck-calculator">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paycheck Calculator with OBBBA Overtime Deduction 2025">
+<meta property="og:description" content="See your full paycheck breakdown plus annual savings from the OBBBA overtime tax deduction.">
+<meta property="og:url" content="https://notaxovertimecalc.com/paycheck-calculator">
+<meta property="og:site_name" content="NoTaxOvertimeCalc">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paycheck Calculator with OBBBA Overtime Deduction">
+<meta name="twitter:description" content="Free per-paycheck calculator with OBBBA overtime savings projection.">
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a1628">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "NoTaxOvertimeCalc", "alternateName": "NoTaxOvertimeCalc.com", "url": "https://notaxovertimecalc.com/", "publisher": { "@id": "https://notaxovertimecalc.com/#org" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://notaxovertimecalc.com/#org", "name": "NoTaxOvertimeCalc", "url": "https://notaxovertimecalc.com/", "logo": { "@type": "ImageObject", "url": "https://notaxovertimecalc.com/favicon-512.png", "width": 512, "height": 512 } }
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Paycheck Calculator with OBBBA Overtime Deduction",
+  "url": "https://notaxovertimecalc.com/paycheck-calculator",
+  "description": "Free per-paycheck breakdown calculator showing federal income tax, FICA, and take-home pay, plus annual savings from the OBBBA overtime deduction.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@id": "https://notaxovertimecalc.com/#org" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Does the OBBBA overtime deduction change my per-paycheck withholding?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, not by default. The deduction is claimed annually on Schedule 1-A of Form 1040, reducing your federal tax bill at filing time. Your per-paycheck federal withholding stays the same unless you submit a new W-4 (the IRS released a 2026 Form W-4 with a Section 1b worksheet allowing you to adjust)." } },
+    { "@type": "Question", "name": "Why doesn't this calculator include state taxes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "State income tax rules vary significantly by state (rates, brackets, deductions). Including state taxes would require either a 50-state implementation or generic assumptions that could mislead you. For accuracy, this calculator shows federal income tax and FICA only — your state withholding is separate and varies by state." } },
+    { "@type": "Question", "name": "How is federal withholding calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We use the percentage method from IRS Publication 15-T (Worksheet 1A): annualize your gross pay, subtract the standard deduction for your filing status, apply the 2025 tax brackets to get annual tax, subtract any dependent credits, then divide by your number of pay periods. This matches what most employer payroll systems do." } },
+    { "@type": "Question", "name": "Does FICA still apply to overtime?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Social Security (6.2% up to the wage base) and Medicare (1.45%, plus 0.9% additional Medicare tax over $200,000) apply in full to all overtime pay — including the premium portion deductible under OBBBA. The deduction reduces federal income tax only." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://notaxovertimecalc.com/" },
+  { "@type": "ListItem", "position": 2, "name": "Paycheck Calculator", "item": "https://notaxovertimecalc.com/paycheck-calculator" }
+] }
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 400; color: var(--gray-800); background: var(--gray-100); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  :root {
+    --navy: #0a1628; --navy-light: #142340; --gold: #f0a500; --gold-soft: #fff4d6;
+    --teal: #00c9a7; --teal-dark: #00a386; --teal-soft: #e6f7f3;
+    --white: #ffffff; --gray-100: #f7f8fa; --gray-200: #e8ebf0; --gray-400: #9ba3b4;
+    --gray-600: #5a6478; --gray-800: #2d3548; --red: #d64545;
+    --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06); --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.08);
+    --shadow-lg: 0 20px 50px rgba(10, 22, 40, 0.12); --radius: 12px; --radius-lg: 20px;
+  }
+  h1, h2, h3, h4 { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.2; letter-spacing: -0.02em; }
+  p { margin: 0 0 1em; }
+  a { color: var(--teal-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  button { font-family: inherit; cursor: pointer; }
+  input, select { font-family: inherit; }
+  .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  .site-header { background: var(--navy); color: var(--white); padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-md); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: var(--white); text-decoration: none; display: flex; align-items: center; letter-spacing: -0.025em; white-space: nowrap; line-height: 1; }
+  @media (min-width: 480px) { .logo { font-size: 26px; } }
+  @media (min-width: 768px) { .logo { font-size: 28px; } }
+  .logo:hover { text-decoration: none; color: var(--white); }
+  .logo-text .accent { color: var(--gold); }
+  .logo-text .dot { color: var(--gold); margin-left: 1px; }
+  .nav { display: none; gap: 28px; align-items: center; }
+  .nav a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; text-decoration: none; }
+  .nav a:hover { opacity: 1; }
+  .nav a.nav-cta { background: var(--gold); color: var(--navy); padding: 8px 16px; border-radius: 8px; opacity: 1; font-weight: 600; }
+  .nav a.nav-cta:hover { background: #ffb733; color: var(--navy); }
+  .nav-toggle { display: inline-flex; flex-direction: column; gap: 4px; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+  .nav-toggle span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+  @media (min-width: 768px) { .nav { display: flex; } .nav-toggle { display: none; } }
+  .nav-mobile { display: none; background: var(--navy-light); padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .nav-mobile.open { display: block; }
+  .nav-mobile a { display: block; color: var(--white); padding: 10px 0; font-size: 15px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); text-decoration: none; }
+
+  .hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 56px 0 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 10%, rgba(240, 165, 0, 0.08), transparent 40%), radial-gradient(circle at 80% 90%, rgba(0, 201, 167, 0.06), transparent 40%); pointer-events: none; }
+  .hero-inner { position: relative; text-align: center; }
+  .eyebrow { display: inline-block; background: rgba(240, 165, 0, 0.15); color: var(--gold); padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px; border: 1px solid rgba(240, 165, 0, 0.3); }
+  .hero h1 { color: var(--white); font-size: clamp(2rem, 6vw, 3.4rem); margin-bottom: 16px; max-width: 820px; margin-left: auto; margin-right: auto; }
+  .hero h1 .highlight { color: var(--gold); }
+  .hero p.lede { font-size: clamp(1rem, 2.5vw, 1.18rem); max-width: 700px; margin: 0 auto 8px; color: rgba(255, 255, 255, 0.85); }
+  .hero-meta { display: inline-flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; font-size: 13px; color: rgba(255, 255, 255, 0.7); justify-content: center; }
+  .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .hero-meta .dot { color: var(--teal); }
+
+  .calc-wrap { margin-top: -50px; position: relative; z-index: 2; padding-bottom: 40px; }
+  .calc-card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; }
+  .calc-form { padding: 28px 24px; border-bottom: 1px solid var(--gray-200); }
+  @media (min-width: 600px) { .calc-form { padding: 36px 32px; } }
+
+  .form-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .form-header > div { flex: 1; min-width: 200px; }
+  .form-header h2 { font-size: 1.4rem; margin-bottom: 4px; }
+  .form-header .subtitle { font-size: 14px; color: var(--gray-600); margin: 0; }
+  .btn-reset { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; background: var(--gray-100); border: 1.5px solid var(--gray-200); border-radius: 8px; color: var(--gray-800); font-size: 13px; font-weight: 600; transition: opacity 0.2s, transform 0.2s, border-color 0.15s, color 0.15s, background 0.15s; flex-shrink: 0; white-space: nowrap; }
+  .btn-reset.is-hidden { opacity: 0; transform: scale(0.9); pointer-events: none; visibility: hidden; }
+  .btn-reset:hover { border-color: var(--red); color: var(--red); background: #fff5f5; }
+  .btn-reset svg { transition: transform 0.4s; }
+  .btn-reset:hover svg { transform: rotate(-180deg); }
+
+  .form-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  @media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+
+  .field label { display: block; font-weight: 500; font-size: 14px; margin-bottom: 8px; color: var(--gray-800); }
+  .field label .req { color: var(--red); }
+  .field .hint { font-size: 12px; color: var(--gray-600); margin-top: 6px; line-height: 1.5; }
+  .input-wrap { position: relative; }
+  .input-prefix { position: absolute; top: 50%; transform: translateY(-50%); color: var(--gray-400); font-size: 15px; font-weight: 500; pointer-events: none; left: 14px; }
+  input[type="number"], select { width: 100%; height: 48px; border: 1.5px solid var(--gray-200); border-radius: var(--radius); padding: 0 14px; font-size: 16px; font-weight: 500; color: var(--gray-800); background: var(--white); transition: border-color 0.15s, box-shadow 0.15s; -moz-appearance: textfield; appearance: none; }
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"].has-prefix { padding-left: 28px; }
+  select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a6478' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+  input:focus, select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.15); }
+  .toggle-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+  @media (max-width: 540px) { .toggle-grid { grid-template-columns: 1fr 1fr; } }
+  .toggle-grid input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+  .toggle-grid label { display: flex; align-items: center; justify-content: center; height: 48px; border: 1.5px solid var(--gray-200); border-radius: var(--radius); font-size: 14px; font-weight: 500; color: var(--gray-600); cursor: pointer; transition: all 0.15s; margin-bottom: 0; text-align: center; line-height: 1.2; padding: 0 8px; }
+  .toggle-grid input[type="radio"]:checked + label { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .toggle-grid label:hover { border-color: var(--gray-400); }
+
+  .results-section { padding: 28px 24px; }
+  @media (min-width: 600px) { .results-section { padding: 36px 32px; } }
+  .results-section h2 { font-size: 1.4rem; margin-bottom: 6px; }
+  .results-section .sub { font-size: 14px; color: var(--gray-600); margin-bottom: 20px; }
+
+  .paycheck-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .paycheck-table th { background: var(--gray-100); padding: 10px 14px; text-align: left; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.06em; }
+  .paycheck-table th:not(:first-child) { text-align: right; }
+  .paycheck-table td { padding: 11px 14px; border-top: 1px solid var(--gray-200); font-size: 14.5px; vertical-align: middle; }
+  .paycheck-table td:first-child { color: var(--gray-800); font-weight: 500; }
+  .paycheck-table td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--navy); }
+  .paycheck-table tr.subtotal td { background: var(--gray-100); font-weight: 700; color: var(--navy); }
+  .paycheck-table tr.deduction td:not(:first-child) { color: var(--red); }
+  .paycheck-table tr.takehome td { background: var(--navy); color: var(--white); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; }
+  .paycheck-table tr.takehome td:not(:first-child) { color: var(--gold); }
+  .paycheck-table .note { font-size: 11px; color: var(--gray-400); font-weight: 400; display: block; margin-top: 2px; }
+
+  .table-wrap { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200); margin-bottom: 24px; }
+  @media (max-width: 480px) { .paycheck-table th, .paycheck-table td { padding: 9px 10px; font-size: 13.5px; } }
+
+  .savings-card { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 28px 24px; border-radius: var(--radius-lg); text-align: center; position: relative; overflow: hidden; margin-top: 18px; }
+  .savings-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(240,165,0,0.18), transparent 50%); pointer-events: none; }
+  .savings-card-inner { position: relative; }
+  .savings-label { display: inline-block; background: rgba(240,165,0,0.15); color: var(--gold); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(240,165,0,0.3); }
+  .savings-amount { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 8vw, 3.4rem); color: var(--gold); line-height: 1; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .savings-sub { font-size: 14px; color: rgba(255,255,255,0.8); margin: 0; }
+  .savings-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .savings-breakdown > div { background: rgba(255,255,255,0.04); padding: 10px 12px; border-radius: 8px; text-align: left; }
+  .savings-breakdown .label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+  .savings-breakdown .value { font-weight: 700; color: var(--white); font-variant-numeric: tabular-nums; }
+
+  .alert { padding: 12px 14px; border-radius: var(--radius); font-size: 13px; line-height: 1.5; margin-top: 16px; display: flex; gap: 10px; align-items: flex-start; }
+  .alert-warning { background: #fff7e6; border: 1px solid #ffd591; color: #8a5a00; }
+  .alert-info { background: #e6f7f3; border: 1px solid #99e0ce; color: #00644f; }
+  .alert-icon { flex-shrink: 0; font-weight: 700; }
+
+  .state-notice { background: var(--gold-soft); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 0 var(--radius) var(--radius) 0; font-size: 13px; color: #6b4e00; line-height: 1.5; margin-top: 18px; }
+  .state-notice strong { color: #4a3700; }
+
+  .results-disclaimer { margin-top: 24px; padding: 14px 16px; background: var(--gray-100); border-radius: var(--radius); font-size: 12px; color: var(--gray-600); line-height: 1.55; }
+
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 44px; padding: 0 18px; border-radius: var(--radius); font-size: 14px; font-weight: 600; border: 0; transition: transform 0.1s, background 0.15s; text-decoration: none; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--teal); color: var(--navy); }
+  .btn-primary:hover { background: var(--teal-dark); color: var(--white); text-decoration: none; }
+  .btn-ghost { background: var(--white); color: var(--navy); border: 1.5px solid var(--gray-200); }
+  .btn-ghost:hover { border-color: var(--teal); }
+
+  .cross-promo { background: var(--teal-soft); border: 1px solid var(--teal); border-radius: var(--radius); padding: 14px 16px; font-size: 13px; color: #00644f; line-height: 1.5; margin-top: 18px; display: flex; gap: 10px; align-items: flex-start; }
+  .cross-promo strong { color: #004a3a; }
+
+  .section { padding: 56px 0; }
+  .section h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 12px; }
+  .section .lede { font-size: 1.05rem; color: var(--gray-600); max-width: 680px; margin-bottom: 32px; }
+  .grid-3 { display: grid; gap: 18px; grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+  .card { background: var(--white); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); }
+  .card .num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--gold-soft); color: var(--navy); font-family: 'Syne', sans-serif; font-weight: 800; border-radius: 8px; margin-bottom: 12px; }
+  .card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--gray-600); margin: 0; }
+
+  .faq-list details { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 12px; }
+  .faq-list details[open] { border-color: var(--teal); }
+  .faq-list summary { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 1rem; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: "+"; color: var(--gold); font-size: 22px; font-weight: 600; line-height: 1; }
+  .faq-list details[open] summary::after { content: "−"; }
+  .faq-list details > div { margin-top: 12px; font-size: 14px; color: var(--gray-600); line-height: 1.7; }
+
+  .disclaimer-box { background: var(--gold-soft); border-left: 4px solid var(--gold); padding: 18px 22px; border-radius: 0 var(--radius) var(--radius) 0; font-size: 13px; color: #6b4e00; line-height: 1.65; }
+  .disclaimer-box strong { color: #4a3700; }
+
+  .site-footer { background: var(--navy); color: rgba(255, 255, 255, 0.7); padding: 48px 0 24px; margin-top: 48px; font-size: 14px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+  @media (min-width: 700px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+  .footer-brand .logo { color: var(--white); margin-bottom: 12px; }
+  .footer-brand p { font-size: 13px; max-width: 320px; }
+  .footer-col h4 { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: rgba(255, 255, 255, 0.7); font-size: 14px; text-decoration: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.5); }
+
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(40px); background: var(--navy); color: var(--white); padding: 12px 20px; border-radius: var(--radius); font-size: 14px; font-weight: 500; box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 200; }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .skip-link { position: absolute; top: -40px; left: 0; background: var(--navy); color: var(--white); padding: 8px 14px; z-index: 200; }
+  .skip-link:focus { top: 0; }
+</style>
+  <!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHQZH68FJ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VHQZH68FJ0');
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#calculator">Skip to calculator</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="NoTaxOvertimeCalc home">
+      <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/who-qualifies">Who Qualifies</a>
+      <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
+      <a href="/state-tax-guide">State Guide</a>
+      <a href="/faq">FAQ</a>
+      <a href="/" class="nav-cta">Calculator</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="mobile-nav">
+    <a href="/">Overtime Calculator</a>
+    <a href="/tips-calculator">Tips Calculator</a>
+    <a href="/paycheck-calculator">Paycheck Calculator</a>
+    <a href="/who-qualifies">Who Qualifies</a>
+    <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
+    <a href="/state-tax-guide">State Guide</a>
+    <a href="/faq">FAQ</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow">Tax Year 2025 · Federal + FICA</span>
+    <h1>Paycheck Calculator with OBBBA Overtime Deduction 2025</h1>
+    <p class="lede">See exactly how your paycheck breaks down — gross pay, federal withholding, Social Security, Medicare, and take-home — then see your projected annual savings from the OBBBA overtime deduction.</p>
+    <div class="hero-meta">
+      <span><span class="dot">●</span> IRS Pub 15-T withholding</span>
+      <span><span class="dot">●</span> Federal + FICA</span>
+      <span><span class="dot">●</span> Annual OBBBA savings</span>
+    </div>
+  </div>
+</section>
+
+<div class="container calc-wrap">
+  <main class="calc-card" id="calculator">
+    <section class="calc-form" aria-labelledby="form-title">
+      <div class="form-header">
+        <div>
+          <h2 id="form-title">Your pay details</h2>
+          <p class="subtitle">Enter your per-pay-period numbers to see your full breakdown.</p>
+        </div>
+        <button type="button" class="btn-reset is-hidden" id="btn-reset" aria-label="Clear all fields">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+          Clear all
+        </button>
+      </div>
+
+      <div class="field" style="margin-bottom: 18px;">
+        <label>Filing status <span class="req" aria-hidden="true">*</span></label>
+        <div class="toggle-grid" role="radiogroup">
+          <input type="radio" id="fs-single" name="filing" value="single" checked>
+          <label for="fs-single">Single</label>
+          <input type="radio" id="fs-mfj" name="filing" value="mfj">
+          <label for="fs-mfj">MFJ</label>
+          <input type="radio" id="fs-hoh" name="filing" value="hoh">
+          <label for="fs-hoh">HOH</label>
+          <input type="radio" id="fs-mfs" name="filing" value="mfs">
+          <label for="fs-mfs">MFS</label>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="rate">Regular hourly rate <span class="req">*</span></label>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" id="rate" class="has-prefix" min="0" step="0.01" placeholder="25.00" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="pay-frequency">Pay frequency <span class="req">*</span></label>
+          <select id="pay-frequency">
+            <option value="weekly">Weekly (52/year)</option>
+            <option value="biweekly" selected>Bi-weekly (26/year)</option>
+            <option value="semimonthly">Semi-monthly (24/year)</option>
+            <option value="monthly">Monthly (12/year)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="reg-hours">Regular hours per pay period</label>
+          <input type="number" id="reg-hours" min="0" step="0.5" placeholder="80" inputmode="decimal">
+          <div class="hint">For bi-weekly: 80 is a typical full-time amount (40 hrs/week × 2).</div>
+        </div>
+
+        <div class="field">
+          <label for="ot-hours">Overtime hours per pay period</label>
+          <input type="number" id="ot-hours" min="0" step="0.5" placeholder="10" inputmode="decimal">
+          <div class="hint">FLSA overtime only — hours worked over 40 per week.</div>
+        </div>
+
+        <div class="field">
+          <label for="dependents">Dependents claimed (W-4 line 3)</label>
+          <input type="number" id="dependents" min="0" step="1" value="0" inputmode="numeric">
+          <div class="hint">Children under 17 give a $2,000 credit each.</div>
+        </div>
+
+        <div class="field">
+          <label for="magi">Annual MAGI estimate (optional)</label>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" id="magi" class="has-prefix" min="0" step="100" placeholder="Defaults to annualized pay" inputmode="numeric">
+          </div>
+          <div class="hint">Used to check OBBBA phase-out. Leave blank to use this paycheck's annualized total.</div>
+        </div>
+      </div>
+
+      <div id="alerts"></div>
+    </section>
+
+    <section class="results-section" id="results">
+      <h2>Per-paycheck breakdown</h2>
+      <p class="sub" id="period-sub">Bi-weekly paycheck · 26 pay periods per year</p>
+
+      <div class="table-wrap">
+        <table class="paycheck-table" aria-label="Paycheck breakdown">
+          <thead>
+            <tr><th>Item</th><th>Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Regular pay <span class="note" id="reg-detail">— hrs × $—</span></td><td id="r-regpay">$0</td></tr>
+            <tr><td>Overtime pay (1.5×) <span class="note" id="ot-detail">— hrs × $—</span></td><td id="r-otpay">$0</td></tr>
+            <tr class="subtotal"><td>Gross pay</td><td id="r-gross">$0</td></tr>
+            <tr class="deduction"><td>Federal income tax withheld</td><td id="r-fed">−$0</td></tr>
+            <tr class="deduction"><td>Social Security (6.2%) <span class="note">Wage base $168,600</span></td><td id="r-ss">−$0</td></tr>
+            <tr class="deduction"><td>Medicare (1.45%)</td><td id="r-medicare">−$0</td></tr>
+            <tr class="subtotal"><td>Total FICA</td><td id="r-fica">−$0</td></tr>
+            <tr class="takehome"><td>Net take-home pay</td><td id="r-takehome">$0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="savings-card">
+        <div class="savings-card-inner">
+          <span class="savings-label">⭐ OBBBA Overtime Deduction</span>
+          <div class="savings-amount" id="annual-savings">$0</div>
+          <p class="savings-sub" id="savings-sub">Projected annual federal tax savings from your overtime premium</p>
+
+          <div class="savings-breakdown">
+            <div>
+              <div class="label">Annual OT premium</div>
+              <div class="value" id="annual-premium">$0</div>
+            </div>
+            <div>
+              <div class="label">Marginal federal rate</div>
+              <div class="value" id="marginal-rate">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cross-promo">
+        <span aria-hidden="true">💡</span>
+        <div><strong>Important:</strong> The OBBBA deduction is claimed annually on Schedule 1-A — your per-paycheck withholding (shown above) doesn't automatically reflect it. You'll see the savings as a larger refund or smaller tax bill at filing time. The IRS released a 2026 W-4 with a Section 1b worksheet if you want to reduce withholding now.</div>
+      </div>
+
+      <div class="state-notice">
+        <strong>State taxes not shown:</strong> This calculator covers federal income tax + FICA only. State withholding still applies (varies by state) and isn't reduced by OBBBA. See our <a href="/state-tax-guide">State Tax Guide</a> for which states conform.
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" id="btn-share" type="button">🔗 Share Result</button>
+        <button class="btn btn-ghost" id="btn-print" type="button">🖨 Print / PDF</button>
+        <a class="btn btn-ghost" href="/" style="margin-left: auto;">Full overtime calculator →</a>
+      </div>
+
+      <div class="results-disclaimer">
+        Federal withholding calculated per IRS Publication 15-T (percentage method, annualized) using 2025 brackets and standard deduction. FICA includes Social Security (6.2%, capped at $168,600 wage base for 2025) and Medicare (1.45%). Additional Medicare tax (0.9% on wages over $200K single) not modeled. State income tax not included. Estimate only — your actual paycheck depends on your W-4 entries, pre-tax benefits, and state rules. Consult a tax professional before filing.
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="section">
+  <div class="container">
+    <h2>How this calculator works</h2>
+    <p class="lede">Built on standard IRS methodology so the numbers match what real employer payroll systems calculate.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="num">1</div>
+        <h3>Federal withholding</h3>
+        <p>Uses the IRS Publication 15-T percentage method (Worksheet 1A): annualize gross pay, subtract standard deduction, apply 2025 brackets, subtract dependent credits, divide by pay periods.</p>
+      </div>
+      <div class="card">
+        <div class="num">2</div>
+        <h3>FICA</h3>
+        <p>Social Security at 6.2% up to the $168,600 wage base, plus Medicare at 1.45% with no cap. These taxes apply to all gross wages including overtime — OBBBA does not reduce FICA.</p>
+      </div>
+      <div class="card">
+        <div class="num">3</div>
+        <h3>OBBBA annual savings</h3>
+        <p>Your overtime premium (regular rate × 0.5 × OT hours, annualized) × your marginal federal tax rate = projected annual savings claimed on Schedule 1-A.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--white);">
+  <div class="container">
+    <h2>Common questions</h2>
+    <p class="lede">How this calculator's numbers relate to your actual paycheck.</p>
+    <div class="faq-list">
+      <details>
+        <summary>Does the OBBBA deduction change my per-paycheck withholding?</summary>
+        <div>Not by default. The deduction is claimed annually on Schedule 1-A of Form 1040, reducing your federal tax bill at filing time. Your per-paycheck federal withholding stays the same unless you submit a new W-4. The IRS released a 2026 Form W-4 with a Section 1b worksheet allowing you to adjust withholding for the OBBBA deduction if you want the cash flow benefit during the year instead of at refund time.</div>
+      </details>
+      <details>
+        <summary>Why doesn't this calculator include state taxes?</summary>
+        <div>State income tax rules vary significantly by state — different rates, brackets, deductions, local taxes. Including state taxes would either require a full 50-state implementation or generic assumptions that could mislead you. For accuracy, this calculator shows federal income tax and FICA only. Your state withholding is separate, varies by state, and is not reduced by OBBBA in 43 states. See our <a href="/state-tax-guide">State Tax Guide</a>.</div>
+      </details>
+      <details>
+        <summary>How is federal withholding calculated?</summary>
+        <div>The IRS percentage method (Pub. 15-T Worksheet 1A): annualize gross pay × pay periods per year, subtract standard deduction for your filing status, apply 2025 brackets, subtract $2,000 per dependent (Child Tax Credit), then divide annual tax by pay periods. This matches most employer payroll systems. Your actual W-4 may include more nuanced inputs (extra withholding, multiple jobs adjustment) not modeled here.</div>
+      </details>
+      <details>
+        <summary>Why is my actual paycheck different?</summary>
+        <div>Several reasons: pre-tax deductions (401(k), health insurance, HSA, FSA) reduce your taxable wages and are not modeled here; state and local taxes apply on top of federal/FICA; your W-4 may have extra withholding amounts entered; and your overtime hours often vary pay-to-pay. This calculator gives you the federal + FICA picture only.</div>
+      </details>
+      <details>
+        <summary>Does FICA apply to my overtime pay?</summary>
+        <div>Yes. Social Security (6.2% up to the wage base) and Medicare (1.45%, plus 0.9% Additional Medicare Tax over $200,000) apply in full to all overtime pay — including the premium portion deductible under OBBBA. The deduction reduces federal income tax only.</div>
+      </details>
+      <details>
+        <summary>What about my tips? Should those be included?</summary>
+        <div>Not in this calculator. Tip income has its own separate OBBBA deduction (up to $25,000 under IRC §224) and its own calculation — try our <a href="/tips-calculator">Tips Calculator</a> if you receive tips. If you want to model overtime AND tips together, use both calculators separately and add the savings.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding: 36px 0;">
+  <div class="container">
+    <div class="disclaimer-box">
+      <strong>Disclaimer.</strong> NoTaxOvertimeCalc.com is an independent informational resource and is not affiliated with the IRS or any government agency. This calculator provides estimates only and does not constitute tax, legal, or financial advice. Federal withholding figures are calculated per IRS Publication 15-T (2025) and may differ from your actual paycheck depending on W-4 entries, pre-tax deductions, multiple jobs, additional withholding requests, or AMT. State income tax is not included. Consult a qualified tax professional or CPA before relying on these figures.
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span></div>
+        <p>Free tax tools for American workers. Built to help you understand the No Tax on Overtime and No Tax on Tips provisions of the One Big Beautiful Bill Act.</p>
+      </div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="/">Overtime</a></li><li><a href="/tips-calculator">Tips</a></li><li><a href="/paycheck-calculator">Paycheck</a></li></ul></div>
+      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><a href="/state-tax-guide">State Guide</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> NoTaxOvertimeCalc.com · All rights reserved</span>
+      <span>Not affiliated with the IRS · Estimates only</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function() {
+  'use strict';
+
+  var CONFIG = {
+    standardDeduction: { single: 14600, mfj: 29200, mfs: 14600, hoh: 21900 },
+    brackets: {
+      single: [[11925, 0.10], [48475, 0.12], [103350, 0.22], [197300, 0.24], [250525, 0.32], [626350, 0.35], [Infinity, 0.37]],
+      mfj:    [[23850, 0.10], [96950, 0.12], [206700, 0.22], [394600, 0.24], [501050, 0.32], [751600, 0.35], [Infinity, 0.37]],
+      hoh:    [[17000, 0.10], [64850, 0.12], [103350, 0.22], [197300, 0.24], [250500, 0.32], [626350, 0.35], [Infinity, 0.37]]
+    },
+    payPeriods: { weekly: 52, biweekly: 26, semimonthly: 24, monthly: 12 },
+    periodLabel: { weekly: 'Weekly', biweekly: 'Bi-weekly', semimonthly: 'Semi-monthly', monthly: 'Monthly' },
+    fica: { ssRate: 0.062, ssWageBase: 168600, medicareRate: 0.0145 },
+    obbba: {
+      cap: { single: 12500, mfj: 25000, hoh: 12500, mfs: 0 },
+      phaseOut: {
+        single: { start: 150000, end: 275000 },
+        hoh:    { start: 150000, end: 275000 },
+        mfj:    { start: 300000, end: 550000 },
+        mfs:    { start: 0, end: 0 }
+      }
+    },
+    childCredit: 2000
+  };
+
+  var $ = function(id) { return document.getElementById(id); };
+  var fmt = function(n) { if (!isFinite(n)) n = 0; return '$' + Math.round(n).toLocaleString('en-US'); };
+  var fmtDec = function(n) { return '$' + n.toFixed(2); };
+  var fmtPct = function(n) { return (n * 100).toFixed(0) + '%'; };
+
+  function calcAnnualTax(taxable, filing) {
+    var brackets = CONFIG.brackets[filing] || CONFIG.brackets.single;
+    if (taxable <= 0) return 0;
+    var tax = 0, prev = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      var top = brackets[i][0], rate = brackets[i][1];
+      if (taxable <= top) { tax += (taxable - prev) * rate; return tax; }
+      tax += (top - prev) * rate;
+      prev = top;
+    }
+    return tax;
+  }
+
+  function getMarginalRate(taxable, filing) {
+    var brackets = CONFIG.brackets[filing] || CONFIG.brackets.single;
+    if (taxable <= 0) return brackets[0][1];
+    for (var i = 0; i < brackets.length; i++) {
+      if (taxable <= brackets[i][0]) return brackets[i][1];
+    }
+    return brackets[brackets.length - 1][1];
+  }
+
+  function calculate() {
+    var filing     = (document.querySelector('input[name="filing"]:checked') || {}).value || 'single';
+    var rate       = parseFloat($('rate').value) || 0;
+    var regHours   = parseFloat($('reg-hours').value) || 0;
+    var otHours    = parseFloat($('ot-hours').value) || 0;
+    var payFreq    = $('pay-frequency').value;
+    var dependents = parseInt($('dependents').value, 10) || 0;
+    var magiInput  = parseFloat($('magi').value);
+
+    var ppy = CONFIG.payPeriods[payFreq];
+    var stdDed = CONFIG.standardDeduction[filing];
+
+    var regPay = rate * regHours;
+    var otPay = rate * 1.5 * otHours;
+    var gross = regPay + otPay;
+
+    var annualGross = gross * ppy;
+    var annualTaxable = Math.max(0, annualGross - stdDed);
+    var annualTax = calcAnnualTax(annualTaxable, filing);
+    var creditAmount = dependents * CONFIG.childCredit;
+    var annualWithholding = Math.max(0, annualTax - creditAmount);
+    var federalWithholding = annualWithholding / ppy;
+
+    var annualSSwages = Math.min(annualGross, CONFIG.fica.ssWageBase);
+    var ssAnnual = annualSSwages * CONFIG.fica.ssRate;
+    var ssPerPaycheck = ssAnnual / ppy;
+    var medicarePerPaycheck = gross * CONFIG.fica.medicareRate;
+    var ficaPerPaycheck = ssPerPaycheck + medicarePerPaycheck;
+    var takeHome = gross - federalWithholding - ficaPerPaycheck;
+
+    var annualOTHours = otHours * ppy;
+    var annualOTPremium = rate * 0.5 * annualOTHours;
+    var magi = isFinite(magiInput) && magiInput > 0 ? magiInput : annualGross;
+
+    var capForFiling = CONFIG.obbba.cap[filing];
+    var afterCap = Math.min(annualOTPremium, capForFiling);
+
+    var po = CONFIG.obbba.phaseOut[filing];
+    var phaseOutReduction = 0;
+    if (filing !== 'mfs' && magi > po.start) {
+      phaseOutReduction = Math.floor((magi - po.start) / 1000) * 100;
+      if (phaseOutReduction > afterCap) phaseOutReduction = afterCap;
+      if (magi >= po.end) phaseOutReduction = afterCap;
+    }
+    var finalDeduction = Math.max(0, afterCap - phaseOutReduction);
+    if (filing === 'mfs') finalDeduction = 0;
+
+    var marginalRate = getMarginalRate(annualTaxable, filing);
+    var annualSavings = finalDeduction * marginalRate;
+
+    $('reg-detail').textContent = regHours > 0 ? regHours.toFixed(1) + ' hrs × ' + fmtDec(rate) : '— hrs × $—';
+    $('ot-detail').textContent = otHours > 0 ? otHours.toFixed(1) + ' hrs × ' + fmtDec(rate * 1.5) : '— hrs × $—';
+
+    $('r-regpay').textContent = fmt(regPay);
+    $('r-otpay').textContent = fmt(otPay);
+    $('r-gross').textContent = fmt(gross);
+    $('r-fed').textContent = '−' + fmt(federalWithholding);
+    $('r-ss').textContent = '−' + fmt(ssPerPaycheck);
+    $('r-medicare').textContent = '−' + fmt(medicarePerPaycheck);
+    $('r-fica').textContent = '−' + fmt(ficaPerPaycheck);
+    $('r-takehome').textContent = fmt(takeHome);
+
+    $('annual-savings').textContent = fmt(annualSavings);
+    $('annual-premium').textContent = fmt(annualOTPremium);
+    $('marginal-rate').textContent = (gross > 0 && otHours > 0) ? fmtPct(marginalRate) : '—';
+
+    $('period-sub').textContent = CONFIG.periodLabel[payFreq] + ' paycheck · ' + ppy + ' pay periods per year';
+
+    if (gross > 0 && otHours > 0 && finalDeduction > 0) {
+      $('savings-sub').textContent = 'Projected annual federal tax savings, claimed on Schedule 1-A at filing time';
+    } else if (gross > 0 && otHours === 0) {
+      $('savings-sub').textContent = 'Add overtime hours to see your OBBBA deduction savings';
+    } else if (filing === 'mfs') {
+      $('savings-sub').textContent = 'Married Filing Separately cannot claim the OBBBA deduction';
+    } else {
+      $('savings-sub').textContent = 'Enter your pay details to estimate savings';
+    }
+
+    var alerts = [];
+    if (filing === 'mfs') alerts.push({type:'warning', msg:'Married Filing Separately filers cannot claim the OBBBA overtime deduction. File jointly to qualify.'});
+    if (filing !== 'mfs' && magi > po.start && magi < po.end) alerts.push({type:'info', msg:'Your annualized income ('+fmt(magi)+') is in the phase-out range. Deduction reduced by $100 per $1,000 above '+fmt(po.start)+'.'});
+    if (filing !== 'mfs' && magi >= po.end && otHours > 0) alerts.push({type:'warning', msg:'Your annualized income ('+fmt(magi)+') fully phases out the deduction.'});
+    if (annualGross > CONFIG.fica.ssWageBase) alerts.push({type:'info', msg:'Your annualized income exceeds the Social Security wage base ($168,600). SS tax stops after that — your last paychecks of the year will have a higher take-home.'});
+    if (otHours > 0 && annualOTPremium > capForFiling) alerts.push({type:'info', msg:'Your annual OT premium ('+fmt(annualOTPremium)+') exceeds the OBBBA cap ('+fmt(capForFiling)+'). Only $'+capForFiling.toLocaleString()+' is deductible.'});
+
+    var alertsHtml = '';
+    for (var i = 0; i < alerts.length; i++) {
+      var icon = alerts[i].type === 'warning' ? '⚠' : 'ℹ';
+      alertsHtml += '<div class="alert alert-'+alerts[i].type+'"><span class="alert-icon">'+icon+'</span><span>'+alerts[i].msg+'</span></div>';
+    }
+    $('alerts').innerHTML = alertsHtml;
+
+    var hasAnyData = (rate || regHours || otHours || dependents > 0 || magiInput);
+    var resetBtn = $('btn-reset');
+    if (resetBtn) {
+      if (hasAnyData) resetBtn.classList.remove('is-hidden');
+      else resetBtn.classList.add('is-hidden');
+    }
+  }
+
+  function readURLState() {
+    var p = new URLSearchParams(window.location.search);
+    var f = p.get('f'), r = p.get('r'), rh = p.get('rh'), oh = p.get('oh');
+    var pf = p.get('pf'), d = p.get('d'), m = p.get('m');
+    if (f === 'single' || f === 'mfj' || f === 'hoh' || f === 'mfs') {
+      var radio = $('fs-' + f); if (radio) radio.checked = true;
+    }
+    if (r) $('rate').value = r;
+    if (rh) $('reg-hours').value = rh;
+    if (oh) $('ot-hours').value = oh;
+    if (pf && CONFIG.payPeriods[pf]) $('pay-frequency').value = pf;
+    if (d) $('dependents').value = d;
+    if (m) $('magi').value = m;
+  }
+
+  function buildShareURL() {
+    var params = new URLSearchParams();
+    var filing = (document.querySelector('input[name="filing"]:checked') || {}).value || 'single';
+    params.set('f', filing);
+    if ($('rate').value) params.set('r', $('rate').value);
+    if ($('reg-hours').value) params.set('rh', $('reg-hours').value);
+    if ($('ot-hours').value) params.set('oh', $('ot-hours').value);
+    if ($('pay-frequency').value !== 'biweekly') params.set('pf', $('pay-frequency').value);
+    if ($('dependents').value && $('dependents').value !== '0') params.set('d', $('dependents').value);
+    if ($('magi').value) params.set('m', $('magi').value);
+    return window.location.origin + window.location.pathname + '?' + params.toString();
+  }
+
+  function showToast(msg) {
+    var t = $('toast');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(function(){ t.classList.remove('show'); }, 2200);
+  }
+
+  function init() {
+    readURLState();
+
+    var inputs = document.querySelectorAll(
+      '#rate, #reg-hours, #ot-hours, #pay-frequency, #dependents, #magi, input[name="filing"]'
+    );
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener('input', calculate);
+      inputs[i].addEventListener('change', calculate);
+    }
+
+    var navToggle = $('navToggle');
+    var mobileNav = $('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', function() {
+        var open = mobileNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+
+    $('btn-share').addEventListener('click', function() {
+      var url = buildShareURL();
+      try { window.history.replaceState({}, '', url); } catch(e) {}
+      if (navigator.share) {
+        navigator.share({ title: 'My paycheck breakdown', text: 'See my paycheck breakdown and OBBBA savings.', url: url })
+          .catch(function(){ copyURL(url); });
+      } else { copyURL(url); }
+    });
+    function copyURL(url) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){ showToast('Link copied to clipboard'); }, function(){ fallbackCopy(url); });
+      } else { fallbackCopy(url); }
+    }
+    function fallbackCopy(url) {
+      var ta = document.createElement('textarea');
+      ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); showToast('Link copied to clipboard'); }
+      catch(e) { showToast('Press Ctrl+C to copy'); }
+      document.body.removeChild(ta);
+    }
+
+    $('btn-print').addEventListener('click', function() { window.print(); });
+
+    $('btn-reset').addEventListener('click', function() {
+      $('rate').value = ''; $('reg-hours').value = ''; $('ot-hours').value = '';
+      $('dependents').value = '0'; $('magi').value = '';
+      $('fs-single').checked = true;
+      $('pay-frequency').value = 'biweekly';
+      try { window.history.replaceState({}, '', window.location.pathname); } catch(e) {}
+      calculate();
+      showToast('Inputs cleared');
+      $('rate').focus();
+    });
+
+    var yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    calculate();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About NoTaxOvertimeCalc — Free OBBBA Overtime Deduction Calculator</title>
+<meta name="description" content="Learn about NoTaxOvertimeCalc — a free calculator for the OBBBA No Tax on Overtime deduction. Built for hourly workers, based on IRS guidance.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="NoTaxOvertimeCalc">
+<link rel="canonical" href="https://notaxovertimecalc.com/about">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="About NoTaxOvertimeCalc — Free Overtime Tax Deduction Calculator">
+<meta property="og:description" content="A free, focused calculator for the OBBBA No Tax on Overtime deduction. Built for hourly W-2 workers.">
+<meta property="og:url" content="https://notaxovertimecalc.com/about">
+<meta property="og:site_name" content="NoTaxOvertimeCalc">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About NoTaxOvertimeCalc">
+<meta name="twitter:description" content="Why I built this free calculator for the OBBBA overtime tax deduction.">
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a1628">
+
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "NoTaxOvertimeCalc", "alternateName": "NoTaxOvertimeCalc.com", "url": "https://notaxovertimecalc.com/", "publisher": { "@id": "https://notaxovertimecalc.com/#org" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://notaxovertimecalc.com/#org", "name": "NoTaxOvertimeCalc", "url": "https://notaxovertimecalc.com/", "logo": { "@type": "ImageObject", "url": "https://notaxovertimecalc.com/favicon-512.png", "width": 512, "height": 512 } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "AboutPage", "name": "About NoTaxOvertimeCalc", "url": "https://notaxovertimecalc.com/about", "description": "Background on NoTaxOvertimeCalc, a free calculator for the OBBBA federal overtime tax deduction.", "datePublished": "2026-02-01", "dateModified": "2026-05-01", "publisher": { "@id": "https://notaxovertimecalc.com/#org" } }
+</script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://notaxovertimecalc.com/" },
+  { "@type": "ListItem", "position": 2, "name": "About", "item": "https://notaxovertimecalc.com/about" }
+] }
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 400; color: var(--gray-800); background: var(--gray-100); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  :root {
+    --navy: #0a1628; --navy-light: #142340; --gold: #f0a500; --gold-soft: #fff4d6;
+    --teal: #00c9a7; --teal-dark: #00a386; --teal-soft: #e6f7f3;
+    --white: #ffffff; --gray-100: #f7f8fa; --gray-200: #e8ebf0; --gray-400: #9ba3b4;
+    --gray-600: #5a6478; --gray-800: #2d3548;
+    --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.06); --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.08);
+    --radius: 12px; --radius-lg: 20px;
+  }
+  h1, h2, h3, h4 { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.25; letter-spacing: -0.02em; }
+  p { margin: 0 0 1.1em; }
+  a { color: var(--teal-dark); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--navy); }
+  ul, ol { padding-left: 22px; margin: 0 0 1.2em; }
+  li { margin-bottom: 6px; }
+  .container { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  .container-wide { max-width: 1100px; }
+
+  .site-header { background: var(--navy); color: var(--white); padding: 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-md); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: var(--white); text-decoration: none; display: flex; align-items: center; letter-spacing: -0.025em; white-space: nowrap; line-height: 1; }
+  @media (min-width: 480px) { .logo { font-size: 26px; } }
+  @media (min-width: 768px) { .logo { font-size: 28px; } }
+  .logo:hover { text-decoration: none; color: var(--white); }
+  .logo-text .accent { color: var(--gold); }
+  .logo-text .dot { color: var(--gold); margin-left: 1px; }
+  .nav { display: none; gap: 28px; align-items: center; }
+  .nav a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; text-decoration: none; }
+  .nav a:hover { opacity: 1; }
+  .nav a.active { opacity: 1; color: var(--gold); }
+  .nav a.nav-cta { background: var(--gold); color: var(--navy); padding: 8px 16px; border-radius: 8px; opacity: 1; font-weight: 600; }
+  .nav a.nav-cta:hover { background: #ffb733; color: var(--navy); }
+  .nav-toggle { display: inline-flex; flex-direction: column; gap: 4px; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+  .nav-toggle span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+  @media (min-width: 768px) { .nav { display: flex; } .nav-toggle { display: none; } }
+  .nav-mobile { display: none; background: var(--navy-light); padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .nav-mobile.open { display: block; }
+  .nav-mobile a { display: block; color: var(--white); padding: 10px 0; font-size: 15px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); text-decoration: none; }
+
+  .breadcrumb { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; font-size: 13px; color: var(--gray-600); }
+  .breadcrumb a { color: var(--gray-600); text-decoration: none; }
+  .breadcrumb .sep { margin: 0 8px; color: var(--gray-400); }
+  .breadcrumb .current { color: var(--navy); font-weight: 500; }
+
+  .article-header { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 48px 0 56px; position: relative; overflow: hidden; }
+  .article-header::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 10%, rgba(240, 165, 0, 0.08), transparent 40%), radial-gradient(circle at 80% 90%, rgba(0, 201, 167, 0.06), transparent 40%); pointer-events: none; }
+  .article-header-inner { position: relative; }
+  .eyebrow { display: inline-block; background: rgba(240, 165, 0, 0.15); color: var(--gold); padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; border: 1px solid rgba(240, 165, 0, 0.3); }
+  .article-header h1 { color: var(--white); font-size: clamp(1.75rem, 5vw, 2.6rem); margin-bottom: 14px; }
+  .article-header .lede { font-size: clamp(1rem, 2.2vw, 1.15rem); color: rgba(255,255,255,0.85); margin-bottom: 0; max-width: 680px; }
+  .article-meta { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.65); display: flex; flex-wrap: wrap; gap: 16px; }
+  .article-meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .article-meta .dot { color: var(--teal); }
+
+  article { background: var(--white); padding: 48px 0; }
+  article h2 { font-size: clamp(1.4rem, 3.5vw, 1.7rem); margin: 36px 0 12px; padding-top: 8px; }
+  article h2:first-child { margin-top: 0; }
+  article h3 { font-size: 1.15rem; margin: 24px 0 10px; }
+  article p, article li { font-size: 16px; }
+  article strong { color: var(--navy); font-weight: 600; }
+
+  /* Section divider — subtle, not a hard line */
+  .section { padding: 12px 0; }
+  .section.alt { background: var(--gray-100); padding: 32px 0; margin: 32px -20px; border-radius: var(--radius); }
+  .section.alt-inner { padding: 0 20px; }
+
+  /* Two-column does/doesn't list */
+  .does-grid { display: grid; gap: 16px; grid-template-columns: 1fr; margin: 18px 0 24px; }
+  @media (min-width: 600px) { .does-grid { grid-template-columns: 1fr 1fr; } }
+  .does-card { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: var(--radius); padding: 18px 20px; }
+  .does-card h3 { display: flex; align-items: center; gap: 8px; font-size: 1rem; margin: 0 0 10px; }
+  .does-card.yes { border-color: var(--teal); }
+  .does-card.no { border-color: var(--gray-200); }
+  .does-card.yes h3 { color: var(--teal-dark); }
+  .does-card.no h3 { color: var(--gray-600); }
+  .does-card .icon { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .does-card.yes .icon { background: var(--teal); color: var(--white); }
+  .does-card.no .icon { background: var(--gray-200); color: var(--gray-600); }
+  .does-card ul { margin: 0; padding-left: 18px; font-size: 14.5px; }
+  .does-card li { color: var(--gray-600); margin-bottom: 6px; }
+  .does-card li:last-child { margin-bottom: 0; }
+
+  /* Sources callout */
+  .sources { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px 22px; margin: 18px 0 24px; }
+  .sources h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray-600); margin: 0 0 10px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+  .sources ul { margin: 0; padding-left: 20px; font-size: 14px; }
+  .sources li { color: var(--gray-800); margin-bottom: 5px; }
+  .sources li strong { color: var(--navy); }
+
+  /* Disclaimer prominent box */
+  .disclaimer-prominent { background: var(--gold-soft); border: 2px solid var(--gold); border-radius: var(--radius-lg); padding: 24px 26px; margin: 24px 0; }
+  .disclaimer-prominent h3 { color: #4a3700; font-size: 1.1rem; margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+  .disclaimer-prominent h3 .badge { background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .disclaimer-prominent p { color: #6b4e00; font-size: 14.5px; line-height: 1.7; margin: 0 0 12px; }
+  .disclaimer-prominent p:last-child { margin-bottom: 0; }
+  .disclaimer-prominent strong { color: #4a3700; }
+
+  /* CTA */
+  .cta-box { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 28px 24px; border-radius: var(--radius-lg); margin: 36px 0 0; text-align: center; position: relative; overflow: hidden; }
+  .cta-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(240,165,0,0.12), transparent 50%); pointer-events: none; }
+  .cta-box-inner { position: relative; }
+  .cta-box h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 8px; }
+  .cta-box p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 18px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: var(--radius); font-size: 15px; font-weight: 600; border: 0; cursor: pointer; text-decoration: none; transition: transform 0.1s, background 0.15s; font-family: inherit; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--teal); color: var(--navy); }
+  .btn-primary:hover { background: var(--white); color: var(--navy); text-decoration: none; }
+
+  /* Last reviewed badge */
+  .reviewed-stamp { display: inline-flex; align-items: center; gap: 8px; background: var(--teal-soft); color: #00644f; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin: 8px 0 24px; }
+  .reviewed-stamp .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
+
+  .site-footer { background: var(--navy); color: rgba(255, 255, 255, 0.7); padding: 48px 0 24px; margin-top: 48px; font-size: 14px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
+  @media (min-width: 700px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+  .footer-brand .logo { color: var(--white); margin-bottom: 12px; }
+  .footer-brand p { font-size: 13px; max-width: 320px; }
+  .footer-col h4 { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+  .footer-col ul { list-style: none; padding: 0; margin: 0; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: rgba(255, 255, 255, 0.7); font-size: 14px; text-decoration: none; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: rgba(255, 255, 255, 0.5); }
+
+  .skip-link { position: absolute; top: -40px; left: 0; background: var(--navy); color: var(--white); padding: 8px 14px; z-index: 200; }
+  .skip-link:focus { top: 0; }
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VHQZH68FJ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VHQZH68FJ0');
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container container-wide header-inner">
+    <a href="/" class="logo" aria-label="NoTaxOvertimeCalc home">
+      <span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/who-qualifies">Who Qualifies</a>
+      <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
+      <a href="/state-tax-guide">State Guide</a>
+      <a href="/faq">FAQ</a>
+      <a href="/" class="nav-cta">Calculator</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="mobile-nav">
+    <a href="/">Calculator</a>
+    <a href="/who-qualifies">Who Qualifies</a>
+    <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
+    <a href="/state-tax-guide">State Guide</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About</a>
+  </div>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container container-wide">
+    <a href="/">Home</a>
+    <span class="sep">›</span>
+    <span class="current">About</span>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="container article-header-inner">
+    <span class="eyebrow">About This Site</span>
+    <h1>About NoTaxOvertimeCalc.com</h1>
+    <p class="lede">A free, focused calculator for the OBBBA federal overtime tax deduction. Built for hourly workers. No signup, no upsells, no data stored.</p>
+    <div class="article-meta">
+      <span><span class="dot">●</span> Last reviewed: May 2026</span>
+      <span><span class="dot">●</span> Independent · Not affiliated with the IRS</span>
+    </div>
+  </div>
+</header>
+
+<article id="main-content">
+  <div class="container">
+
+    <span class="reviewed-stamp"><span class="dot"></span>Last reviewed: May 2026</span>
+
+    <h2>Why I Built This Site</h2>
+    <p>The One Big Beautiful Bill Act, signed in July 2025, created a real new federal income tax deduction for overtime pay. For the first time, millions of hourly W-2 workers — nurses pulling extra shifts, factory workers running production lines, construction crews, retail and warehouse staff — can deduct part of their overtime earnings from federal income tax. The catch: the rule is genuinely complicated, only the half-time premium qualifies (not the full 1.5×), and it phases out at higher incomes.</p>
+
+    <p>I built <a href="/">this calculator</a> because the people who would benefit most from this deduction were the least likely to figure it out on their own. The IRS guidance is written for tax professionals. The major tax software products bury the calculation inside paid subscription tiers. State tax sites barely mention it. And generic search results are full of vague articles that explain the law in concept but never actually do the math.</p>
+
+    <p>So this site does one thing well: takes your hourly rate, your overtime hours, and your filing status, and tells you what you'll actually save. No login. No data sent to any server — every calculation runs in your browser. No upsell to a paid product. If you want to come, run the numbers, and leave, that's exactly what the site is built for.</p>
+
+    <h2>What This Calculator Does (and Doesn't)</h2>
+
+    <div class="does-grid">
+      <div class="does-card yes">
+        <h3><span class="icon">✓</span>What it does</h3>
+        <ul>
+          <li>Calculates federal income tax savings from the OBBBA overtime premium deduction (IRC §225)</li>
+          <li>Handles all four filing statuses with correct caps</li>
+          <li>Applies the income phase-out automatically based on your MAGI</li>
+          <li>Shows what FICA you still owe on overtime pay</li>
+          <li>Covers tax years 2025–2028</li>
+          <li>Generates a shareable URL with your inputs</li>
+          <li>Works on any device, with no account required</li>
+        </ul>
+      </div>
+      <div class="does-card no">
+        <h3><span class="icon">✗</span>What it doesn't do</h3>
+        <ul>
+          <li>Calculate state income taxes (only 7 states currently conform — see the <a href="/state-tax-guide">State Guide</a>)</li>
+          <li>Replace a tax professional for complex situations like multiple W-2s, AMT, or unusual deductions</li>
+          <li>Store any of your data — nothing is sent to a server, nothing is logged</li>
+          <li>Account for every interaction with other credits (CTC, EITC, etc.)</li>
+          <li>File your tax return — that still happens through your tax software or preparer</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>How Accuracy Is Maintained</h2>
+    <p>The calculator math is built directly from the statutory text, not paraphrased from secondary sources. Every formula maps to a specific section of law:</p>
+
+    <ul>
+      <li><strong>The premium calculation</strong> — regular rate × 0.5 × overtime hours — comes directly from IRC §225(c)'s definition of "qualified overtime compensation"</li>
+      <li><strong>The annual cap</strong> ($12,500 single / $25,000 joint) is the cap as written in IRC §225(b)</li>
+      <li><strong>The phase-out</strong> ($100 per $1,000 of MAGI above $150K single / $300K joint) is the formula in IRC §225(b)(2)</li>
+      <li><strong>The 2025 federal tax brackets</strong> are sourced from IRS Publication 15-T and Rev. Proc. 2024-40</li>
+      <li><strong>The divide-by-3 calculation shortcut</strong> referenced in the W-2 guide comes from IRS Notice 2025-69</li>
+    </ul>
+
+    <div class="sources">
+      <h3>Primary Sources Used</h3>
+      <ul>
+        <li><strong>One Big Beautiful Bill Act</strong> — Public Law 119-21, signed July 4, 2025</li>
+        <li><strong>IRC §225</strong> — qualified overtime compensation deduction</li>
+        <li><strong>IRC §224</strong> — qualified tips deduction (for the tips calculator)</li>
+        <li><strong>IRS Notice 2025-62</strong> — employer transitional reporting relief for tax year 2025</li>
+        <li><strong>IRS Notice 2025-69</strong> — calculation guidance for workers, including the divide-by-3 shortcut</li>
+        <li><strong>IRS Rev. Proc. 2024-40</strong> — 2025 inflation-adjusted federal tax brackets</li>
+        <li><strong>IRS Schedule 1-A</strong> — instructions for claiming the deduction on Form 1040</li>
+        <li><strong>Fair Labor Standards Act, 29 USC §207</strong> — definition of FLSA overtime</li>
+      </ul>
+    </div>
+
+    <p>I review this site before each filing season and after any IRS guidance update. If you spot an error or something that's gone out of date, I want to know — see the contact section below.</p>
+
+    <h2>Who This Is For</h2>
+    <p>The OBBBA overtime deduction was written for one specific kind of worker: a W-2 employee who is non-exempt under the Fair Labor Standards Act and earns time-and-a-half overtime for hours over 40 per week. In practice, that means:</p>
+
+    <ul>
+      <li><strong>Registered nurses, LPNs, CNAs, and healthcare workers</strong> with frequent picked-up shifts and overtime</li>
+      <li><strong>Manufacturing and factory workers</strong> on production lines with regular overtime</li>
+      <li><strong>Construction workers, electricians, plumbers, and skilled trades</strong> on hourly W-2 arrangements</li>
+      <li><strong>Retail, grocery, and food service workers</strong> who pull extra shifts during busy periods</li>
+      <li><strong>Logistics, warehouse, and delivery workers</strong> — often substantial overtime</li>
+      <li><strong>Any other hourly W-2 employee</strong> who is FLSA non-exempt and earns the 1.5× premium</li>
+    </ul>
+
+    <p>It is <strong>not</strong> built for self-employed people, 1099 contractors, gig workers, or salaried exempt employees — those workers don't qualify for the deduction at all. If you're not sure where you fall, the <a href="/who-qualifies">Who Qualifies guide</a> walks through the eligibility test in detail.</p>
+
+    <div class="disclaimer-prominent">
+      <h3>Legal Disclaimer <span class="badge">Important</span></h3>
+      <p>NoTaxOvertimeCalc.com is an <strong>independent educational tool</strong>. It is not affiliated with the Internal Revenue Service, the U.S. Department of the Treasury, or any government agency.</p>
+      <p>All calculations are estimates based on published law and IRS guidance as of May 2026. This tool <strong>does not constitute tax, legal, or financial advice</strong>. Tax laws may change and individual circumstances vary.</p>
+      <p>Always consult a qualified tax professional or CPA before filing your tax return. Results do not account for all individual tax situations, alternative minimum tax (AMT), or interactions with other tax credits and deductions.</p>
+    </div>
+
+    <h2>Contact &amp; Feedback</h2>
+    <p>If you find an error, see something that needs updating, or want to suggest an improvement, please get in touch. Worker-focused tools like this one only stay useful if real users tell me what's broken or unclear.</p>
+    <p>The fastest path is the <a href="/contact">contact page</a>. Bug reports, IRS guidance updates I might have missed, suggestions for new calculator features — all welcome.</p>
+    <p>Explore the site: <a href="/faq">Frequently asked questions</a> · <a href="/who-qualifies">Eligibility guide</a> · <a href="/how-to-find-overtime-on-w2">W-2 guide</a></p>
+
+    <div class="cta-box">
+      <div class="cta-box-inner">
+        <h3>Ready to run the numbers?</h3>
+        <p>Estimate your federal tax savings on overtime — instant results, no signup.</p>
+        <a href="/" class="btn btn-primary">Open the Calculator</a>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container container-wide">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span></div>
+        <p>Free tax tools for American hourly workers. Built to help you understand the No Tax on Overtime provision of the One Big Beautiful Bill Act.</p>
+      </div>
+      <div class="footer-col"><h4>Calculators</h4><ul><li><a href="/">Overtime</a></li><li><a href="/tips-calculator">Tips</a></li><li><a href="/paycheck-calculator">Paycheck</a></li></ul></div>
+      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><a href="/state-tax-guide">State Guide</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> NoTaxOvertimeCalc.com · All rights reserved</span>
+      <span>Not affiliated with the IRS · Estimates only</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', function() {
+      var open = mobileNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
