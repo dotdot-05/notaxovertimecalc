@@ -302,6 +302,15 @@
 
   .skip-link { position: absolute; top: -40px; left: 0; background: var(--navy); color: var(--white); padding: 8px 14px; z-index: 200; }
   .skip-link:focus { top: 0; }
+  .state-cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0 4px; }
+  @media (max-width: 540px) { .state-cta-row { grid-template-columns: 1fr; } }
+  .state-cta-card { display: flex; align-items: center; gap: 12px; background: var(--white); border: 1.5px solid var(--gold); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--navy); transition: box-shadow 0.15s, border-color 0.15s; }
+  .state-cta-card:hover { box-shadow: 0 4px 16px rgba(240,165,0,0.2); border-color: #d49200; color: var(--navy); text-decoration: none; }
+  .state-cta-flag { font-size: 24px; line-height: 1; flex-shrink: 0; }
+  .state-cta-card div { flex: 1; }
+  .state-cta-card strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); font-family: 'Syne', sans-serif; }
+  .state-cta-card span { font-size: 12px; color: var(--gray-600); line-height: 1.4; }
+  .state-cta-arrow { color: var(--gold); font-size: 18px; font-weight: 700; flex-shrink: 0; }
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHQZH68FJ0"></script>
@@ -392,7 +401,25 @@
     <p>This guide answers the question for all 50 states. We use the latest research from the <a href="https://taxfoundation.org/research/all/state/big-beautiful-bill-state-tax-impact/" rel="nofollow">Tax Foundation</a> and <a href="https://itep.org/tips-overtime-income-tax-deduction-state-budgets/" rel="nofollow">ITEP</a> on state conformity, plus current state revenue department status as of May 2026. Status can change as state legislatures act — always verify with your state revenue department before filing.</p>
 
     <h2>Does Any State Conform to the OBBBA Overtime Deduction?</h2>
-    <p>As of May 2026, no state has <em>enacted legislation</em> specifically conforming to the federal OBBBA overtime deduction. Seven states automatically inherit it through their Federal Taxable Income starting point (Idaho, Iowa, Michigan, Montana, North Dakota, Oregon, and South Carolina), but most states still tax overtime earnings in full. Workers in states with no income tax (Texas, Florida, Nevada, Washington, Wyoming, South Dakota, Alaska) are unaffected since there was never state tax on wages to begin with. See the <a href="/california-overtime-deduction">California overtime guide</a> and <a href="/obbba-overtime-calculator-texas">Texas overtime calculator</a> for state-specific examples.</p>
+    <p>As of May 2026, no state has <em>enacted legislation</em> specifically conforming to the federal OBBBA overtime deduction. Seven states automatically inherit it through their Federal Taxable Income starting point (Idaho, Iowa, Michigan, Montana, North Dakota, Oregon, and South Carolina), but most states still tax overtime earnings in full. Workers in states with no income tax (Texas, Florida, Nevada, Washington, Wyoming, South Dakota, Alaska) are unaffected since there was never state tax on wages to begin with.</p>
+    <div class="state-cta-row">
+      <a href="/california-overtime-deduction" class="state-cta-card">
+        <span class="state-cta-flag">🌴</span>
+        <div>
+          <strong>California Guide</strong>
+          <span>FLSA vs. daily overtime · the 4×10 trap explained</span>
+        </div>
+        <span class="state-cta-arrow">→</span>
+      </a>
+      <a href="/obbba-overtime-calculator-texas" class="state-cta-card">
+        <span class="state-cta-flag">⭐</span>
+        <div>
+          <strong>Texas Calculator</strong>
+          <span>No state tax · keep 100% of federal savings</span>
+        </div>
+        <span class="state-cta-arrow">→</span>
+      </a>
+    </div>
 
     <h2>Why the Federal Deduction Doesn't Always Affect State Taxes</h2>
 
