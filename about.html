@@ -83,9 +83,23 @@
   .nav-toggle { display: inline-flex; flex-direction: column; gap: 4px; background: transparent; border: 0; padding: 8px; cursor: pointer; }
   .nav-toggle span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
   @media (min-width: 768px) { .nav { display: flex; } .nav-toggle { display: none; } }
-  .nav-mobile { display: none; background: var(--navy-light); padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .nav-mobile { display: none; background: var(--navy-light); padding: 4px 20px 4px; border-top: 1px solid rgba(255,255,255,0.08); }
   .nav-mobile.open { display: block; }
   .nav-mobile a { display: block; color: var(--white); padding: 10px 0; font-size: 15px; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); text-decoration: none; }
+  .mobile-calc-section { border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 4px; margin-bottom: 0; }
+  .mobile-calc-label { color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 12px 0 4px; }
+  .mobile-calc-sub { display: block; color: rgba(255,255,255,0.85); padding: 8px 0 8px 14px; font-size: 14px; font-weight: 500; border-bottom: 0 !important; }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-btn { background: var(--gold); color: var(--navy); border: 0; padding: 8px 14px; border-radius: 8px; font-weight: 600; font-size: 14px; font-family: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; line-height: 1; white-space: nowrap; }
+  .nav-dropdown-btn:hover { background: #ffb733; }
+  .nav-dropdown-btn .chev { transition: transform 0.2s; flex-shrink: 0; }
+  .nav-dropdown-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .dropdown-menu { position: absolute; top: calc(100% + 10px); right: 0; background: var(--white); border-radius: 14px; box-shadow: 0 12px 40px rgba(10,22,40,0.18); min-width: 215px; padding: 6px; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity 0.18s, transform 0.18s, visibility 0s linear 0.18s; z-index: 200; }
+  .dropdown-menu.open { opacity: 1; visibility: visible; transform: translateY(0); transition: opacity 0.18s, transform 0.18s; }
+  .dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 14px; color: var(--navy); border-radius: 8px; font-weight: 500; text-decoration: none; opacity: 1; }
+  .dropdown-menu a:hover { background: var(--gray-100); color: var(--navy); text-decoration: none; }
+  .dropdown-menu a.active { background: var(--gold-soft); font-weight: 600; }
+  .dropdown-menu .dm-icon { font-size: 16px; line-height: 1; }
 
   .breadcrumb { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; font-size: 13px; color: var(--gray-600); }
   .breadcrumb a { color: var(--gray-600); text-decoration: none; }
@@ -161,10 +175,12 @@
   .reviewed-stamp .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; }
 
   .site-footer { background: var(--navy); color: rgba(255, 255, 255, 0.7); padding: 48px 0 24px; margin-top: 48px; font-size: 14px; }
-  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 32px; }
-  @media (min-width: 700px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-  .footer-brand .logo { color: var(--white); margin-bottom: 12px; }
-  .footer-brand p { font-size: 13px; max-width: 320px; }
+  .footer-brand { margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-brand .logo { color: var(--white); margin-bottom: 10px; }
+  .footer-brand p { font-size: 13px; max-width: 420px; margin: 0; }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 16px; margin-bottom: 32px; }
+  @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(5, 1fr); } }
   .footer-col h4 { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
   .footer-col ul { list-style: none; padding: 0; margin: 0; }
   .footer-col li { margin-bottom: 8px; }
@@ -198,19 +214,33 @@
       <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
       <a href="/state-tax-guide">State Guide</a>
       <a href="/faq">FAQ</a>
-      <a href="/" class="nav-cta">Calculator</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" id="calcDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Calculators
+          <svg class="chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dropdown-menu" id="calcDropdownMenu" role="menu">
+          <a href="/" role="menuitem"><span class="dm-icon">⚡</span>Overtime Calculator</a>
+          <a href="/tips-calculator" role="menuitem"><span class="dm-icon">💰</span>Tips Calculator</a>
+          <a href="/paycheck-calculator" role="menuitem"><span class="dm-icon">🧾</span>Paycheck Calculator</a>
+        </div>
+      </div>
     </nav>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="navToggle">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-mobile" id="mobile-nav">
-    <a href="/">Calculator</a>
+    <div class="mobile-calc-section">
+      <div class="mobile-calc-label">Calculators</div>
+      <a href="/" class="mobile-calc-sub">⚡ Overtime Calculator</a>
+      <a href="/tips-calculator" class="mobile-calc-sub">💰 Tips Calculator</a>
+      <a href="/paycheck-calculator" class="mobile-calc-sub">🧾 Paycheck Calculator</a>
+    </div>
     <a href="/who-qualifies">Who Qualifies</a>
     <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
     <a href="/state-tax-guide">State Guide</a>
     <a href="/faq">FAQ</a>
-    <a href="/about">About</a>
   </div>
 </header>
 
@@ -339,14 +369,16 @@
 
 <footer class="site-footer">
   <div class="container container-wide">
+    <div class="footer-brand">
+      <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span></div>
+      <p>Free tax tools for American hourly workers. Built to help you understand the No Tax on Overtime provision of the One Big Beautiful Bill Act.</p>
+    </div>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo"><span class="logo-text">NoTaxOvertime<span class="accent">Calc</span><span class="dot">.</span></span></div>
-        <p>Free tax tools for American hourly workers. Built to help you understand the No Tax on Overtime provision of the One Big Beautiful Bill Act.</p>
-      </div>
       <div class="footer-col"><h4>Calculators</h4><ul><li><a href="/">Overtime</a></li><li><a href="/tips-calculator">Tips</a></li><li><a href="/paycheck-calculator">Paycheck</a></li></ul></div>
-      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><a href="/state-tax-guide">State Guide</a></li><li><a href="/faq">FAQ</a></li></ul></div>
-      <div class="footer-col"><h4>About</h4><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div>
+      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>By State</h4><ul><li><a href="/state-tax-guide">All 50 States</a></li><li><a href="/california-overtime-deduction">California</a></li><li><a href="/obbba-overtime-calculator-texas">Texas</a></li></ul></div>
+      <div class="footer-col"><h4>By Industry</h4><ul><li><a href="/nurses-overtime-tax-2025">Nurses</a></li><li><a href="/construction-workers-overtime-deduction">Construction</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy-policy">Privacy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> NoTaxOvertimeCalc.com · All rights reserved</span>
@@ -363,6 +395,26 @@
     navToggle.addEventListener('click', function() {
       var open = mobileNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var dropBtn = document.getElementById('calcDropdownBtn');
+  var dropMenu = document.getElementById('calcDropdownMenu');
+  if (dropBtn && dropMenu) {
+    dropBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = dropMenu.classList.toggle('open');
+      dropBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function() {
+      dropMenu.classList.remove('open');
+      dropBtn.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        dropMenu.classList.remove('open');
+        dropBtn.setAttribute('aria-expanded', 'false');
+        dropBtn.focus();
+      }
     });
   }
   var yearEl = document.getElementById('year');
