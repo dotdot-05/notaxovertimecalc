@@ -21,10 +21,9 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-# Google's AI training crawler (blocks AI Overviews citations if disallowed)
-# Currently blocked — uncomment "Allow: /" to appear in AI Overviews
+# Google's AI training crawler — allowed to appear in AI Overviews citations
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 # =====================================================
 # BING
