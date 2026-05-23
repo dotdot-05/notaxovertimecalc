@@ -1,5 +1,5 @@
 # robots.txt for notaxovertimecalc.com
-# Last updated: 2026-05-19
+# Last updated: 2026-05-23
 
 # =====================================================
 # DEFAULT: Allow all reputable crawlers full access
