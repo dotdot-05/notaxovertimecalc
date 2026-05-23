@@ -123,6 +123,8 @@
   .dropdown-menu a:hover { background: var(--gray-100); color: var(--navy); text-decoration: none; }
   .dropdown-menu a.active { background: var(--gold-soft); font-weight: 600; }
   .dropdown-menu .dm-icon { font-size: 16px; line-height: 1; }
+  .nav-guide-btn { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+  .nav-guide-btn:hover { background: rgba(255,255,255,0.1); color: var(--white); }
 
   .hero { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); padding: 52px 0 74px; position: relative; overflow: hidden; }
   .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 10%, rgba(240, 165, 0, 0.08), transparent 40%), radial-gradient(circle at 80% 90%, rgba(0, 201, 167, 0.06), transparent 40%); pointer-events: none; }
@@ -284,7 +286,20 @@
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/who-qualifies">Who Qualifies</a>
-      <a href="/workforce-guide">Workforce Guide</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn nav-guide-btn" id="guideDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Guides
+          <svg class="chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dropdown-menu" id="guideDropdownMenu" role="menu">
+          <a href="/workforce-guide" role="menuitem"><span class="dm-icon">👷</span>Workforce Guide</a>
+          <a href="/how-to-calculate-overtime-deduction" role="menuitem"><span class="dm-icon">🧮</span>How to Calculate OT Deduction</a>
+          <a href="/overtime-deduction-on-1040" role="menuitem"><span class="dm-icon">📋</span>Overtime on 1040</a>
+          <a href="/overtime-deduction-turbotax" role="menuitem"><span class="dm-icon">💻</span>TurboTax Guide</a>
+          <a href="/is-overtime-worth-it-with-taxes" role="menuitem"><span class="dm-icon">💡</span>Is OT Worth It?</a>
+          <a href="/what-is-overtime-deduction-on-taxes" role="menuitem"><span class="dm-icon">📖</span>What Is OT Deduction?</a>
+        </div>
+      </div>
       <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
       <a href="/state-tax-guide">State Guide</a>
       <a href="/faq">FAQ</a>
@@ -312,7 +327,15 @@
       <a href="/paycheck-calculator" class="mobile-calc-sub">🧾 Paycheck Calculator</a>
     </div>
     <a href="/who-qualifies">Who Qualifies</a>
-    <a href="/workforce-guide">Workforce Guide</a>
+    <div class="mobile-calc-section">
+      <div class="mobile-calc-label">Guides</div>
+      <a href="/workforce-guide" class="mobile-calc-sub">👷 Workforce Guide</a>
+      <a href="/how-to-calculate-overtime-deduction" class="mobile-calc-sub">🧮 How to Calculate OT Deduction</a>
+      <a href="/overtime-deduction-on-1040" class="mobile-calc-sub">📋 Overtime on 1040</a>
+      <a href="/overtime-deduction-turbotax" class="mobile-calc-sub">💻 TurboTax Guide</a>
+      <a href="/is-overtime-worth-it-with-taxes" class="mobile-calc-sub">💡 Is OT Worth It?</a>
+      <a href="/what-is-overtime-deduction-on-taxes" class="mobile-calc-sub">📖 What Is OT Deduction?</a>
+    </div>
     <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
     <a href="/state-tax-guide">State Guide</a>
     <a href="/faq">FAQ</a>
@@ -548,7 +571,20 @@
     </div>
     <div class="footer-grid">
       <div class="footer-col"><h4>Calculators</h4><ul><li><a href="/">Overtime</a></li><li><a href="/tips-calculator">Tips</a></li><li><a href="/paycheck-calculator">Paycheck</a></li><li><a href="https://layoffcalc.com/" target="_blank" rel="noopener noreferrer">LayoffCalc</a></li></ul></div>
-      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><a href="/workforce-guide">Workforce Guide</a></li><li><a href="/state-tax-guide">State Guide</a></li></ul></div>
+      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/who-qualifies">Who Qualifies</a></li><li><a href="/how-to-find-overtime-on-w2">W-2 Guide</a></li><li><div class="nav-dropdown">
+        <button class="nav-dropdown-btn nav-guide-btn" id="guideDropdownBtn" aria-expanded="false" aria-haspopup="true">
+          Guides
+          <svg class="chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dropdown-menu" id="guideDropdownMenu" role="menu">
+          <a href="/workforce-guide" role="menuitem"><span class="dm-icon">👷</span>Workforce Guide</a>
+          <a href="/how-to-calculate-overtime-deduction" role="menuitem"><span class="dm-icon">🧮</span>How to Calculate OT Deduction</a>
+          <a href="/overtime-deduction-on-1040" role="menuitem"><span class="dm-icon">📋</span>Overtime on 1040</a>
+          <a href="/overtime-deduction-turbotax" role="menuitem"><span class="dm-icon">💻</span>TurboTax Guide</a>
+          <a href="/is-overtime-worth-it-with-taxes" role="menuitem"><span class="dm-icon">💡</span>Is OT Worth It?</a>
+          <a href="/what-is-overtime-deduction-on-taxes" role="menuitem"><span class="dm-icon">📖</span>What Is OT Deduction?</a>
+        </div>
+      </div></li><li><a href="/state-tax-guide">State Guide</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy-policy">Privacy</a></li><li><a href="/faq">FAQ</a></li></ul></div>
     </div>
     </div>
@@ -770,24 +806,34 @@
 
     var dropBtn = document.getElementById('calcDropdownBtn');
     var dropMenu = document.getElementById('calcDropdownMenu');
+    var guideBtn = document.getElementById('guideDropdownBtn');
+    var guideMenu = document.getElementById('guideDropdownMenu');
     if (dropBtn && dropMenu) {
       dropBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         var open = dropMenu.classList.toggle('open');
         dropBtn.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', function() {
-        dropMenu.classList.remove('open');
-        dropBtn.setAttribute('aria-expanded', 'false');
-      });
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          dropMenu.classList.remove('open');
-          dropBtn.setAttribute('aria-expanded', 'false');
-          dropBtn.focus();
-        }
+        if (open && guideMenu) { guideMenu.classList.remove('open'); if (guideBtn) guideBtn.setAttribute('aria-expanded', 'false'); }
       });
     }
+    if (guideBtn && guideMenu) {
+      guideBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var open = guideMenu.classList.toggle('open');
+        guideBtn.setAttribute('aria-expanded', open);
+        if (open && dropMenu) { dropMenu.classList.remove('open'); if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false'); }
+      });
+    }
+    document.addEventListener('click', function() {
+      if (dropMenu) { dropMenu.classList.remove('open'); if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false'); }
+      if (guideMenu) { guideMenu.classList.remove('open'); if (guideBtn) guideBtn.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (dropMenu) { dropMenu.classList.remove('open'); if (dropBtn) dropBtn.setAttribute('aria-expanded', 'false'); if (dropBtn) dropBtn.focus(); }
+        if (guideMenu) { guideMenu.classList.remove('open'); if (guideBtn) guideBtn.setAttribute('aria-expanded', 'false'); }
+      }
+    });
 
     $('btn-share').addEventListener('click', function() {
       var url = buildShareURL();
