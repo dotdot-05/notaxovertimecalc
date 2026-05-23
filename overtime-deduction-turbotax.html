@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -195,8 +195,9 @@
   .dropdown-menu a:hover { background: var(--gray-100); color: var(--navy); text-decoration: none; }
   .dropdown-menu a.active { background: var(--gold-soft); font-weight: 600; }
   .dropdown-menu .dm-icon { font-size: 16px; line-height: 1; }
-  .nav-guide-btn { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
-  .nav-guide-btn:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+  .nav-guide-btn { background: transparent; color: var(--white); border: none; padding: 0; font-size: 15px; font-weight: 500; opacity: 0.85; }
+  .nav-guide-btn:hover { background: transparent; color: var(--white); opacity: 1; }
+  .hover-trigger:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); transition: opacity 0.18s, transform 0.18s; }
   .breadcrumb { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 12px 0; font-size: 13px; color: var(--gray-600); }
   .breadcrumb a { color: var(--gray-600); text-decoration: none; }
   .breadcrumb a:hover { color: var(--teal-dark); }
@@ -257,12 +258,12 @@
   .footer-brand { flex: 0 0 270px; max-width: 270px; }
   .footer-brand .logo { color: var(--white); margin-bottom: 10px; }
   .footer-brand p { font-size: 13px; max-width: 420px; margin: 0; }
-  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px; flex: 1; min-width: 280px; }
-  @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 28px; flex: 1; min-width: 280px; }
+  @media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr 2fr 1fr; } }
   .footer-col h4 { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
   .footer-col ul { list-style: none; padding: 0; margin: 0; }
   .footer-col li { margin-bottom: 8px; }
-  .footer-col a { color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none; }
+  .footer-col a { color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none; }
   .footer-col a:hover { color: var(--gold); }
   .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.5); }
   .skip-link { position: absolute; top: -40px; left: 0; background: var(--navy); color: var(--white); padding: 8px 14px; z-index: 200; }
@@ -292,7 +293,7 @@
       <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
       <a href="/state-tax-guide">State Guide</a>
       <a href="/faq">FAQ</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown hover-trigger">
         <button class="nav-dropdown-btn" id="calcDropdownBtn" aria-expanded="false" aria-haspopup="true">
           Calculators
           <svg class="chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -330,7 +331,7 @@
       <a href="/paycheck-calculator" class="mobile-calc-sub">🧾 Paycheck Calculator</a>
     </div>
     <div class="mobile-calc-section">
-      <div class="mobile-calc-label">Guides</div>
+      <div class="mobile-calc-label">Filing Guides</div>
       <a href="/workforce-guide" class="mobile-calc-sub">👷 Workforce Guide</a>
       <a href="/how-to-calculate-overtime-deduction" class="mobile-calc-sub">🧮 How to Calculate OT Deduction</a>
       <a href="/overtime-deduction-on-1040" class="mobile-calc-sub">📋 Overtime on 1040</a>
@@ -341,7 +342,6 @@
     <a href="/who-qualifies">Who Qualifies</a>
     <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
     <a href="/state-tax-guide">State Guide</a>
-    <a href="/faq">FAQ</a>
   </div>
 </header>
 

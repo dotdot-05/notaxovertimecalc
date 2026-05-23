@@ -247,8 +247,9 @@
   .dropdown-menu a:hover { background: var(--gray-100); color: var(--navy); text-decoration: none; }
   .dropdown-menu a.active { background: var(--gold-soft); font-weight: 600; }
   .dropdown-menu .dm-icon { font-size: 16px; line-height: 1; }
-  .nav-guide-btn { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
-  .nav-guide-btn:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+  .nav-guide-btn { background: transparent; color: var(--white); border: none; padding: 0; font-size: 15px; font-weight: 500; opacity: 0.85; }
+  .nav-guide-btn:hover { background: transparent; color: var(--white); opacity: 1; }
+  .hover-trigger:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); transition: opacity 0.18s, transform 0.18s; }
 
   /* BREADCRUMB */
   .breadcrumb {
@@ -526,13 +527,13 @@
     margin-top: 48px;
     font-size: 14px;
   }
-  .footer-content { display: flex; align-items: flex-start; gap: 28px 140px; flex-wrap: wrap; margin-bottom: 24px; padding-bottom: 0; }
+  .footer-content { display: flex; align-items: flex-start; gap: 28px 72px; flex-wrap: wrap; margin-bottom: 24px; padding-bottom: 0; }
   .footer-brand { flex: 0 0 270px; max-width: 270px; }
   .footer-brand .logo { color: var(--white); margin-bottom: 10px; }
   .footer-brand p { font-size: 13px; max-width: 420px; margin: 0; }
-  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 48px; flex: 1; min-width: 280px; }
-  @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+  .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 28px; flex: 1; min-width: 280px; }
+  @media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr 2fr 1fr; } }
+  @media (min-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr 2fr 1fr; } }
   .footer-col h4 { color: var(--white); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; font-family: 'DM Sans', sans-serif; font-weight: 600; }
   .footer-col ul { list-style: none; padding: 0; margin: 0; }
   .footer-col li { margin-bottom: 8px; }
@@ -581,7 +582,7 @@
       <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
       <a href="/state-tax-guide">State Guide</a>
       <a href="/faq">FAQ</a>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown hover-trigger">
         <button class="nav-dropdown-btn" id="calcDropdownBtn" aria-expanded="false" aria-haspopup="true">
           Calculators
           <svg class="chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -606,7 +607,7 @@
     </div>
     <a href="/who-qualifies">Who Qualifies</a>
     <div class="mobile-calc-section">
-      <div class="mobile-calc-label">Guides</div>
+      <div class="mobile-calc-label">Filing Guides</div>
       <a href="/workforce-guide" class="mobile-calc-sub">👷 Workforce Guide</a>
       <a href="/how-to-calculate-overtime-deduction" class="mobile-calc-sub">🧮 How to Calculate OT Deduction</a>
       <a href="/overtime-deduction-on-1040" class="mobile-calc-sub">📋 Overtime on 1040</a>
@@ -616,7 +617,6 @@
     </div>
     <a href="/how-to-find-overtime-on-w2">W-2 Guide</a>
     <a href="/state-tax-guide">State Guide</a>
-    <a href="/faq">FAQ</a>
   </div>
 </header>
 
